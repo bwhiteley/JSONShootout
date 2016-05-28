@@ -3,7 +3,7 @@
 //  JSONShootout
 //
 //  Created by Bart Whiteley on 5/16/16.
-//  Copyright © 2016 Ancestry. All rights reserved.
+//  Copyright © 2016 Bart Whiteley. All rights reserved.
 //
 
 import UIKit

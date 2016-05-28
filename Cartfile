@@ -1,0 +1,4 @@
+github "utahiosmac/Marshal" "context"
+github "lyft/mapper" "master"
+github "JohnSundell/Unbox" "master"
+
