@@ -1,4 +1,4 @@
-# JSONShootout
+# JSON Shootout
 
 Wherein we compare three Swift JSON mappers:
 * [Marshal](https://github.com/utahiosmac/Marshal)
