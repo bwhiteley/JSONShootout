@@ -13,4 +13,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/Unbox/Unbox.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/SwiftyJSON/SwiftyJSON.xcodeproj">
+   </FileRef>
 </Workspace>

@@ -31,6 +31,8 @@
 		CC9786C21CEBACD0005A5DEA /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C11CEBACD0005A5DEA /* Mapper.framework */; };
 		CC9786C41CEBACD5005A5DEA /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C31CEBACD5005A5DEA /* Marshal.framework */; };
 		CC9786C61CEBACE8005A5DEA /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C51CEBACE8005A5DEA /* Unbox.framework */; };
+		CCD510591CFFFB4C00E9C0D1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */; };
+		CCD5105B1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		CC9786C11CEBACD0005A5DEA /* Mapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9786C31CEBACD5005A5DEA /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Marshal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9786C51CEBACE8005A5DEA /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Unbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD510591CFFFB4C00E9C0D1 /* SwiftyJSON.framework in Frameworks */,
 				CC9786C61CEBACE8005A5DEA /* Unbox.framework in Frameworks */,
 				CC9786C41CEBACD5005A5DEA /* Marshal.framework in Frameworks */,
 				CC9786C21CEBACD0005A5DEA /* Mapper.framework in Frameworks */,
@@ -127,6 +132,7 @@
 		CC5A19F51CEADE59007238F3 = {
 			isa = PBXGroup;
 			children = (
+				CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */,
 				CC9786C51CEBACE8005A5DEA /* Unbox.framework */,
 				CC9786C31CEBACD5005A5DEA /* Marshal.framework */,
 				CC9786C11CEBACD0005A5DEA /* Mapper.framework */,
@@ -165,6 +171,7 @@
 			children = (
 				CC3023471CF9692700B51746 /* Mapper_Tests.swift */,
 				CC3023481CF9692700B51746 /* Marshal_Tests.swift */,
+				CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */,
 				CC3023491CF9692700B51746 /* Unbox_Tests.swift */,
 				CC5A1A4C1CEAE182007238F3 /* Large.json */,
 				CC5A1A181CEADE59007238F3 /* Info.plist */,
@@ -340,6 +347,7 @@
 				CC30234B1CF9692700B51746 /* Marshal_Tests.swift in Sources */,
 				CC30234A1CF9692700B51746 /* Mapper_Tests.swift in Sources */,
 				CC30234C1CF9692700B51746 /* Unbox_Tests.swift in Sources */,
+				CCD5105B1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +536,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ModelObjects/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -550,6 +561,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ModelObjects/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

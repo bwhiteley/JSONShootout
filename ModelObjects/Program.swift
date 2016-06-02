@@ -10,13 +10,15 @@ import Foundation
 import Marshal
 import Unbox
 import Mapper
+import SwiftyJSON
 
 public struct Program {
     
     let title:String
     let chanId:String
-    let startTime:NSDate
-    let endTime:NSDate
+// Date parsing is slow. Remove dates to better measure performance.
+//    let startTime:NSDate
+//    let endTime:NSDate
     let description:String?
     let subtitle:String?
     let recording:Recording
@@ -28,8 +30,8 @@ extension Program: Unmarshaling {
     public init(object json: MarshaledObject) throws {
         title = try json.valueForKey("Title")
         chanId = try json.valueForKey("Channel.ChanId")
-        startTime = try json.valueForKey("StartTime")
-        endTime = try json.valueForKey("EndTime")
+//        startTime = try json.valueForKey("StartTime")
+//        endTime = try json.valueForKey("EndTime")
         description = try json.valueForKey("Description")
         subtitle = try json.valueForKey("SubTitle")
         recording = try json.valueForKey("Recording")
@@ -42,8 +44,8 @@ extension Program: Unboxable {
     public init(unboxer: Unboxer) {
         title = unboxer.unbox("Title")
         chanId = unboxer.unbox("Channel.ChanId", isKeyPath: true)
-        startTime = unboxer.unbox("StartTime", formatter:NSDate.ISO8601SecondFormatter)
-        endTime = unboxer.unbox("EndTime", formatter:NSDate.ISO8601SecondFormatter)
+//        startTime = unboxer.unbox("StartTime", formatter:NSDate.ISO8601SecondFormatter)
+//        endTime = unboxer.unbox("EndTime", formatter:NSDate.ISO8601SecondFormatter)
         description = unboxer.unbox("Description")
         subtitle = unboxer.unbox("SubTitle")
         recording = unboxer.unbox("Recording")
@@ -56,12 +58,24 @@ extension Program: Mappable {
     public init(map: Mapper) throws {
         title = try map.from("Title")
         chanId = try map.from("Channel.ChanId")
-        startTime = try map.from("StartTime")
-        endTime = try map.from("EndTime")
+//        startTime = try map.from("StartTime")
+//        endTime = try map.from("EndTime")
         description = try map.from("Description")
         subtitle = try map.from("SubTitle")
         recording = try map.from("Recording")
         season = (try map.from("Season") as String?).flatMap({Int($0)})
         episode = (try map.from("Episode") as String?).flatMap({Int($0)})
+    }
+}
+
+extension Program { // SwiftyJSON
+    public init(json:JSON) {
+        title = json["Title"].stringValue
+        chanId = json["Channel"]["ChanId"].stringValue
+        description = json["Description"].string
+        subtitle = json["SubTitle"].string
+        season = json["Season"].int
+        episode = json["Episode"].int
+        recording = Recording(json: json["Recording"])
     }
 }

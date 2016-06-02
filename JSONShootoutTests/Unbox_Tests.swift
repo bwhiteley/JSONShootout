@@ -12,18 +12,7 @@ import ModelObjects
 
 class Unbox_Tests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testPerformance() {
-        //let json = try! JSONParser.JSONObjectWithData(data)
 
         self.measureBlock {
             let programs:[Program] = try! Unboxer.performCustomUnboxingWithData(self.data) { unboxer in
@@ -31,8 +20,6 @@ class Unbox_Tests: XCTestCase {
                 return programs
             }
             XCTAssert(programs.count > 1000)
-            
-            //let programs:[Program] = try! json.valueForKey("ProgramList.Programs")
         }
     }
     

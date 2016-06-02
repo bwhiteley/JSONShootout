@@ -11,6 +11,7 @@ import Foundation
 import Marshal
 import Unbox
 import Mapper
+import SwiftyJSON
 
 public struct Recording {
     enum Status: String, UnboxableEnum {
@@ -36,9 +37,10 @@ public struct Recording {
     }
     
     
-    let startTs:NSDate?
+// Date parsing is slow. Remove dates to better measure performance.
+//    let startTs:NSDate?
+//    let endTs:NSDate?
     let startTsStr:String
-    let endTs:NSDate?
     let status:Status
     let recordId:String
     let recGroup:RecGroup
@@ -46,8 +48,8 @@ public struct Recording {
 
 extension Recording: Unmarshaling {
     public init(object json:MarshaledObject) throws {
-        startTs = try? json.valueForKey("StartTs")
-        endTs = try? json.valueForKey("EndTs")
+//        startTs = try? json.valueForKey("StartTs")
+//        endTs = try? json.valueForKey("EndTs")
         startTsStr = try json.valueForKey("StartTs")
         recordId = try json.valueForKey("RecordId")
         status = (try? json.valueForKey("Status")) ?? .Unknown
@@ -57,8 +59,8 @@ extension Recording: Unmarshaling {
 
 extension Recording: Unboxable {
     public init(unboxer: Unboxer) {
-        startTs = unboxer.unbox("StartTs", formatter:NSDate.ISO8601SecondFormatter)
-        endTs = unboxer.unbox("EndTs", formatter:NSDate.ISO8601SecondFormatter)
+//        startTs = unboxer.unbox("StartTs", formatter:NSDate.ISO8601SecondFormatter)
+//        endTs = unboxer.unbox("EndTs", formatter:NSDate.ISO8601SecondFormatter)
         startTsStr = unboxer.unbox("StartTs")
         recordId = unboxer.unbox("RecordId")
         status = unboxer.unbox("Status") ?? .Unknown
@@ -68,8 +70,8 @@ extension Recording: Unboxable {
 
 extension Recording: Mappable {
     public init(map: Mapper) throws {
-        startTs =  map.optionalFrom("StartTs")
-        endTs =  map.optionalFrom("EndTs")
+//        startTs =  map.optionalFrom("StartTs")
+//        endTs =  map.optionalFrom("EndTs")
         startTsStr = try map.from("StartTs")
         recordId = try map.from("RecordId")
         status = map.optionalFrom("Status") ?? .Unknown
@@ -77,4 +79,22 @@ extension Recording: Mappable {
     }
 }
 
+extension Recording { // SwiftyJSON
+    init(json:JSON) {
+        startTsStr = json["StartTs"].stringValue
+        recordId = json["RecordId"].stringValue
+        if let raw = json["Status"].string {
+            status = Status(rawValue: raw) ?? .Unknown
+        }
+        else {
+            status = .Unknown
+        }
+        if let raw = json["RecGroup"].string {
+            recGroup = RecGroup(rawValue: raw) ?? .Unknown
+        }
+        else {
+            recGroup = .Unknown
+        }
+    }
+}
 

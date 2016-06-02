@@ -1,3 +1,4 @@
-github "utahiosmac/Marshal" "73d35df85f9fc49963ab66698566f42529b87aa8"
-github "JohnSundell/Unbox" "8a52bf732b1dd760b6789c8abd6b3cee55c89466"
+github "utahiosmac/Marshal" "cc36ed3aa3706bf647c165f63eed2f49eae77d4e"
+github "SwiftyJSON/SwiftyJSON" "2.3.3"
+github "JohnSundell/Unbox" "59bc90bba8383407d22de43ba6a33d04fddfe2b8"
 github "lyft/mapper" "9ad3e1c5a0fc47df25604e1db86059fb72f36bf8"

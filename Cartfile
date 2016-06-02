@@ -1,4 +1,5 @@
-github "utahiosmac/Marshal" "context"
+github "utahiosmac/Marshal" "master"
 github "lyft/mapper" "master"
 github "JohnSundell/Unbox" "master"
+github "SwiftyJSON/SwiftyJSON"
 
