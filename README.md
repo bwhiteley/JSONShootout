@@ -184,4 +184,4 @@ If you are looking for a Swift JSON mapper, you might want to clone JSONShootout
 
 
 
-<sub>Disclaimer: I contribute to the Marshal project.</sub>
+<sub>Full Disclosure: I contribute to the Marshal project.</sub>
