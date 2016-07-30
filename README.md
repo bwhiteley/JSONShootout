@@ -164,8 +164,11 @@ With Marshal and Unbox however, the corresponding code will fail to compile beca
 ##Protocol Extensions vs. Wrappers
 
 Both Unbox and Mapper work by wrapping a dictionary in another object. Marshal differs in that it is implemented as a protocol with a protocol extension. Both `NSDictionary` and `Dictionary<String, AnyObject>` conform to the protocol. Any other type implementing `subscript` can conform to the protocol as well. 
+##What about SwiftyJSON?
+
+SwiftyJSON was one of the earliest projects to help Swift developers deal with JSON. Compared to more recent projects, SwiftyJSON is verbose and error prone. It doesn't take advantage of Swift's type system to enable safety, error handling, and expressive code. As you'll see below, the performance is quite bad as well.
 ##Performance
-Now that we have all three JSON mappers processing the same JSON file, we can compare the performance of each. I also threw in SwiftyJSON, one of the earliest Swift projects for handling JSON. While measuring perfornamce I noticed that a lot of time was spent in date parsing. Since this was common across all implementations, I removed the dates from the model objects to get a better comparison of the performance of the JSON mappers themselves.
+Now that we have all three JSON mappers processing the same JSON file, we can compare the performance of each. I also threw in SwiftyJSON, one of the earliest Swift projects for handling JSON. While measuring performance I noticed that a lot of time was spent in date parsing. Since this was common across all implementations, I removed the dates from the model objects to get a better comparison of the performance of the JSON mappers themselves.
 
 This graph shows time spent in each of the mappers as well as time spent in `NSJSONSerialization` for a reference.
 
