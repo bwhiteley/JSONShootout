@@ -168,7 +168,7 @@ Both Unbox and Mapper work by wrapping a dictionary in another object. Marshal d
 
 SwiftyJSON was one of the earliest projects to help Swift developers deal with JSON. Compared to more recent projects, SwiftyJSON is verbose and error prone. It doesn't take advantage of Swift's type system to enable safety, error handling, and expressive code. As you'll see below, the performance is quite bad as well.
 ##Performance
-Now that we have all three JSON mappers processing the same JSON file, we can compare the performance of each. I also threw in SwiftyJSON, one of the earliest Swift projects for handling JSON. While measuring performance I noticed that a lot of time was spent in date parsing. Since this was common across all implementations, I removed the dates from the model objects to get a better comparison of the performance of the JSON mappers themselves.
+Now that we have all three JSON mappers processing the same JSON file, we can compare the performance of each. While measuring performance I noticed that a lot of time was spent in date parsing. Since this was common across all implementations, I removed the dates from the model objects to get a better comparison of the performance of the JSON mappers themselves.
 
 This graph shows time spent in each of the mappers as well as time spent in `NSJSONSerialization` for a reference.
 
