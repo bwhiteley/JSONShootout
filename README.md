@@ -54,9 +54,9 @@ extension Recording: Unmarshaling {
         startTs = try? json.value(for: "StartTs")
         endTs = try? json.value(for: "EndTs")
         startTsStr = try json.value(for: "StartTs")
-        recordId = try json.value("for: RecordId")
-        status = (try? json.value("for: Status")) ?? .Unknown
-        recGroup = (try? json.value("for: RecGroup")) ?? .Unknown
+        recordId = try json.value(for: "RecordId")
+        status = (try? json.value(for: "Status")) ?? .Unknown
+        recGroup = (try? json.value(for: "RecGroup")) ?? .Unknown
     }
 }
 
@@ -133,7 +133,7 @@ extension Program: Unboxable {
         chanId = unboxer.unbox(key: "Channel.ChanId", isKeyPath: true)
         startTime = unboxer.unbox(key: "StartTime", formatter:NSDate.ISO8601SecondFormatter)
         endTime = unboxer.unbox(key: "EndTime", formatter:NSDate.ISO8601SecondFormatter)
-        description = unboxer.unbox("Description")
+        description = unboxer.unbox(key: "Description")
         subtitle = unboxer.unbox(key: "SubTitle")
         recording = unboxer.unbox(key: "Recording")
         season = (unboxer.unbox(key: "Season") as String?).flatMap({Int($0)})
