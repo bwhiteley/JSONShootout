@@ -51,26 +51,26 @@ Now let's look at how these objects would be extracted with each of the JSON map
 ```swift
 extension Recording: Unmarshaling {
     public init(object json:MarshaledObject) throws {
-        startTs = try? json.valueForKey("StartTs")
-        endTs = try? json.valueForKey("EndTs")
-        startTsStr = try json.valueForKey("StartTs")
-        recordId = try json.valueForKey("RecordId")
-        status = (try? json.valueForKey("Status")) ?? .Unknown
-        recGroup = (try? json.valueForKey("RecGroup")) ?? .Unknown
+        startTs = try? json.value(for: "StartTs")
+        endTs = try? json.value(for: "EndTs")
+        startTsStr = try json.value(for: "StartTs")
+        recordId = try json.value("for: RecordId")
+        status = (try? json.value("for: Status")) ?? .Unknown
+        recGroup = (try? json.value("for: RecGroup")) ?? .Unknown
     }
 }
 
 extension Program: Unmarshaling {
     public init(object json: MarshaledObject) throws {
-        title = try json.valueForKey("Title")
-        chanId = try json.valueForKey("Channel.ChanId")
-        startTime = try json.valueForKey("StartTime")
-        endTime = try json.valueForKey("EndTime")
-        description = try json.valueForKey("Description")
-        subtitle = try json.valueForKey("SubTitle")
-        recording = try json.valueForKey("Recording")
-        season = (try json.valueForKey("Season") as String?).flatMap({Int($0)})
-        episode = (try json.valueForKey("Episode") as String?).flatMap({Int($0)})
+        title = try json.value(for: "Title")
+        chanId = try json.value(for: "Channel.ChanId")
+        startTime = try json.value(for: "StartTime")
+        endTime = try json.value(for: "EndTime")
+        description = try json.value(for: "Description")
+        subtitle = try json.value(for: "SubTitle")
+        recording = try json.value(for: "Recording")
+        season = (try json.value(for: "Season") as String?).flatMap({Int($0)})
+        episode = (try json.value(for: "Episode") as String?).flatMap({Int($0)})
     }
 }
 
@@ -118,32 +118,32 @@ let programs:[Program] = try! mapper.from("ProgramList.Programs")
 ```swift
 extension Recording: Unboxable {
     public init(unboxer: Unboxer) {
-        startTs = unboxer.unbox("StartTs", formatter:NSDate.ISO8601SecondFormatter)
-        endTs = unboxer.unbox("EndTs", formatter:NSDate.ISO8601SecondFormatter)
-        startTsStr = unboxer.unbox("StartTs")
-        recordId = unboxer.unbox("RecordId")
-        status = unboxer.unbox("Status") ?? .Unknown
-        recGroup = (unboxer.unbox("RecGroup")) ?? .Unknown
+        startTs = unboxer.unbox(key: "StartTs", formatter:NSDate.ISO8601SecondFormatter)
+        endTs = unboxer.unbox(key: "EndTs", formatter:NSDate.ISO8601SecondFormatter)
+        startTsStr = unboxer.unbox(key: "StartTs")
+        recordId = unboxer.unbox(key: "RecordId")
+        status = unboxer.unbox(key: "Status") ?? .Unknown
+        recGroup = (unboxer.unbox(key: "RecGroup")) ?? .Unknown
     }
 }
 
 extension Program: Unboxable {
     public init(unboxer: Unboxer) {
-        title = unboxer.unbox("Title")
-        chanId = unboxer.unbox("Channel.ChanId", isKeyPath: true)
-        startTime = unboxer.unbox("StartTime", formatter:NSDate.ISO8601SecondFormatter)
-        endTime = unboxer.unbox("EndTime", formatter:NSDate.ISO8601SecondFormatter)
+        title = unboxer.unbox(key: "Title")
+        chanId = unboxer.unbox(key: "Channel.ChanId", isKeyPath: true)
+        startTime = unboxer.unbox(key: "StartTime", formatter:NSDate.ISO8601SecondFormatter)
+        endTime = unboxer.unbox(key: "EndTime", formatter:NSDate.ISO8601SecondFormatter)
         description = unboxer.unbox("Description")
-        subtitle = unboxer.unbox("SubTitle")
-        recording = unboxer.unbox("Recording")
-        season = (unboxer.unbox("Season") as String?).flatMap({Int($0)})
-        episode = (unboxer.unbox("Episode") as String?).flatMap({Int($0)})
+        subtitle = unboxer.unbox(key: "SubTitle")
+        recording = unboxer.unbox(key: "Recording")
+        season = (unboxer.unbox(key: "Season") as String?).flatMap({Int($0)})
+        episode = (unboxer.unbox(key: "Episode") as String?).flatMap({Int($0)})
     }
 }
 
 // Extract an array of Programs
-let programs:[Program] = try! Unboxer.performCustomUnboxingWithData(data) { unboxer in
-    let programs:[Program] = unboxer.unbox("ProgramList.Programs", isKeyPath:true)
+let programs:[Program] = try! performCustomUnboxing(data: data) { unboxer in
+    let programs:[Program] = unboxer.unbox(key: "ProgramList.Programs", isKeyPath:true)
     return programs
 }
 ```
