@@ -13,19 +13,21 @@ import ModelObjects
 class Unbox_Tests: XCTestCase {
 
     func testPerformance() {
-
-        self.measureBlock {
-            let programs:[Program] = try! Unboxer.performCustomUnboxingWithData(self.data) { unboxer in
-                let programs:[Program] = unboxer.unbox("ProgramList.Programs", isKeyPath:true)
+        
+        let dict = try! JSONSerialization.jsonObject(with: self.data, options: [])
+        
+        self.measure {
+            let programs:[Program] = try! Unboxer.performCustomUnboxing(dictionary: dict as! UnboxableDictionary) { unboxer in
+                let programs:[Program] = unboxer.unbox(key:"ProgramList.Programs", isKeyPath:true)
                 return programs
             }
             XCTAssert(programs.count > 1000)
         }
     }
     
-    private lazy var data:NSData = {
-        let path = NSBundle(forClass: self.dynamicType).pathForResource("Large", ofType: "json")
-        let data = NSData(contentsOfFile: path!)!
+    private lazy var data:Data = {
+        let path = Bundle(for: type(of: self)).url(forResource: "Large", withExtension: "json")
+        let data = try! Data(contentsOf: path!)
         return data
     }()
 

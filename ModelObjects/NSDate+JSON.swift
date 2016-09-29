@@ -11,48 +11,47 @@ import Marshal
 import Mapper
 
 // Support for Marshal
-extension NSDate : ValueType {
-    public static func value(object: Any) throws -> NSDate {
+extension Date : ValueType {
+    public static func value(_ object: Any) throws -> Date {
         guard let dateString = object as? String else {
-            throw Error.TypeMismatch(expected: String.self, actual: object.dynamicType)
+            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
         }
-        guard let date = NSDate.fromISO8601String(dateString) else {
-            throw Error.TypeMismatch(expected: "ISO8601 date string", actual: dateString)
+        guard let date = Date.fromISO8601String(dateString) else {
+            throw MarshalError.typeMismatch(expected: "ISO8601 date string", actual: dateString)
         }
         return date
     }
 }
 
-extension NSDate {
-    @nonobjc static let ISO8601SecondFormatter:NSDateFormatter = {
-        let formatter = NSDateFormatter()
+extension Date {
+    @nonobjc static let ISO8601SecondFormatter:DateFormatter = {
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ";
-        let tz = NSTimeZone(abbreviation:"GMT")
+        let tz = TimeZone(abbreviation:"GMT")
         formatter.timeZone = tz
         return formatter
     }()
     
-    static func fromISO8601String(dateString:String) -> NSDate? {
-        if let date = ISO8601SecondFormatter.dateFromString(dateString) {
+    static func fromISO8601String(_ dateString:String) -> Date? {
+        if let date = ISO8601SecondFormatter.date(from: dateString) {
             return date
         }
-        return .None
+        return .none
     }
 }
 
 
 // Support for Mapper
-extension NSDate: Convertible {
-    @warn_unused_result
-    public static func fromMap(value: AnyObject?) throws -> NSDate {
+extension Date: Convertible {
+    public static func fromMap(_ value: Any) throws -> Date {
         guard let string = value as? String else {
-            throw MapperError.ConvertibleError(value: value, type: String.self)
+            throw MapperError.convertibleError(value: value, type: String.self)
         }
         
-        if let date = ISO8601SecondFormatter.dateFromString(string) {
+        if let date = ISO8601SecondFormatter.date(from: string) {
             return date
         }
 
-        throw MapperError.CustomError(field: nil, message: "'\(string)' is not a valid Date")
+        throw MapperError.customError(field: nil, message: "'\(string)' is not a valid Date")
     }
 }

@@ -13,24 +13,24 @@ import SwiftyJSON
 class SwiftyJSON_Tests: XCTestCase {
     
     func testDeserialization() {
-        self.measureBlock {
-            let json = JSON(data:self.data)
+        self.measure {
+            let json = JSON(data:self.data as Data)
             XCTAssert(json.count > 0)
         }
     }
     
     func testPerformance() {
-        let json = JSON(data:self.data)
-        self.measureBlock {
+        let json = JSON(data:self.data as Data)
+        self.measure {
             let programRA = json["ProgramList"]["Programs"].arrayValue
             let programs = programRA.map(Program.init)
             XCTAssert(programs.count > 1000)
         }
     }
     
-    private lazy var data:NSData = {
-        let path = NSBundle(forClass: self.dynamicType).pathForResource("Large", ofType: "json")
-        let data = NSData(contentsOfFile: path!)!
+    private lazy var data:Data = {
+        let path = Bundle(for: type(of: self)).url(forResource: "Large", withExtension: "json")
+        let data = try! Data(contentsOf: path!)
         return data
     }()
     

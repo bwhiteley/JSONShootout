@@ -13,26 +13,26 @@ import Mapper
 class Mapper_Tests: XCTestCase {
 
     func testDeserialization() {
-        self.measureBlock {
-            let d:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(self.data, options: []) as! NSDictionary
+        self.measure {
+            let d:NSDictionary = try! JSONSerialization.jsonObject(with:self.data, options: []) as! NSDictionary
             XCTAssert(d.count > 0)
         }
     }
     
     func testPerformance() {
         
-        let dict = try! NSJSONSerialization.JSONObjectWithData(self.data, options: []) as! NSDictionary
+        let dict = try! JSONSerialization.jsonObject(with: self.data as Data, options: []) as! NSDictionary
         let mapper = Mapper(JSON: dict)
         
-        self.measureBlock {
+        self.measure {
             let programs:[Program] = try! mapper.from("ProgramList.Programs")
             XCTAssert(programs.count > 1000)
         }
     }
     
-    private lazy var data:NSData = {
-        let path = NSBundle(forClass: self.dynamicType).pathForResource("Large", ofType: "json")
-        let data = NSData(contentsOfFile: path!)!
+    private lazy var data:Data = {
+        let path = Bundle(for: type(of: self)).url(forResource: "Large", withExtension: "json")!
+        let data = try! Data(contentsOf: path)
         return data
     }()
 

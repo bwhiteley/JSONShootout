@@ -28,29 +28,29 @@ public struct Program {
 
 extension Program: Unmarshaling {
     public init(object json: MarshaledObject) throws {
-        title = try json.valueForKey("Title")
-        chanId = try json.valueForKey("Channel.ChanId")
-//        startTime = try json.valueForKey("StartTime")
-//        endTime = try json.valueForKey("EndTime")
-        description = try json.valueForKey("Description")
-        subtitle = try json.valueForKey("SubTitle")
-        recording = try json.valueForKey("Recording")
-        season = (try json.valueForKey("Season") as String?).flatMap({Int($0)})
-        episode = (try json.valueForKey("Episode") as String?).flatMap({Int($0)})
+        title = try json.value(for:"Title")
+        chanId = try json.value(for:"Channel.ChanId")
+//        startTime = try json.value(for:"StartTime")
+//        endTime = try json.value(for:"EndTime")
+        description = try json.value(for:"Description")
+        subtitle = try json.value(for:"SubTitle")
+        recording = try json.value(for:"Recording")
+        season = (try json.value(for:"Season") as String?).flatMap({Int($0)})
+        episode = (try json.value(for:"Episode") as String?).flatMap({Int($0)})
     }
 }
 
 extension Program: Unboxable {
     public init(unboxer: Unboxer) {
-        title = unboxer.unbox("Title")
-        chanId = unboxer.unbox("Channel.ChanId", isKeyPath: true)
-//        startTime = unboxer.unbox("StartTime", formatter:NSDate.ISO8601SecondFormatter)
-//        endTime = unboxer.unbox("EndTime", formatter:NSDate.ISO8601SecondFormatter)
-        description = unboxer.unbox("Description")
-        subtitle = unboxer.unbox("SubTitle")
-        recording = unboxer.unbox("Recording")
-        season = (unboxer.unbox("Season") as String?).flatMap({Int($0)})
-        episode = (unboxer.unbox("Episode") as String?).flatMap({Int($0)})
+        title = unboxer.unbox(key:"Title")
+        chanId = unboxer.unbox(key:"Channel.ChanId", isKeyPath: true)
+//        startTime = unboxer.unbox(key:"StartTime", formatter:NSDate.ISO8601SecondFormatter)
+//        endTime = unboxer.unbox(key:"EndTime", formatter:NSDate.ISO8601SecondFormatter)
+        description = unboxer.unbox(key:"Description")
+        subtitle = unboxer.unbox(key:"SubTitle")
+        recording = unboxer.unbox(key:"Recording")
+        season = (unboxer.unbox(key:"Season") as String?).flatMap({Int($0)})
+        episode = (unboxer.unbox(key:"Episode") as String?).flatMap({Int($0)})
     }
 }
 

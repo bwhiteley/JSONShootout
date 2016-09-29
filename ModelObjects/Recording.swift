@@ -48,23 +48,23 @@ public struct Recording {
 
 extension Recording: Unmarshaling {
     public init(object json:MarshaledObject) throws {
-//        startTs = try? json.valueForKey("StartTs")
-//        endTs = try? json.valueForKey("EndTs")
-        startTsStr = try json.valueForKey("StartTs")
-        recordId = try json.valueForKey("RecordId")
-        status = (try? json.valueForKey("Status")) ?? .Unknown
-        recGroup = (try? json.valueForKey("RecGroup")) ?? .Unknown
+//        startTs = try? json.value(for:"StartTs")
+//        endTs = try? json.value(for:"EndTs")
+        startTsStr = try json.value(for:"StartTs")
+        recordId = try json.value(for:"RecordId")
+        status = (try? json.value(for:"Status")) ?? .Unknown
+        recGroup = (try? json.value(for:"RecGroup")) ?? .Unknown
     }
 }
 
 extension Recording: Unboxable {
     public init(unboxer: Unboxer) {
-//        startTs = unboxer.unbox("StartTs", formatter:NSDate.ISO8601SecondFormatter)
-//        endTs = unboxer.unbox("EndTs", formatter:NSDate.ISO8601SecondFormatter)
-        startTsStr = unboxer.unbox("StartTs")
-        recordId = unboxer.unbox("RecordId")
-        status = unboxer.unbox("Status") ?? .Unknown
-        recGroup = (unboxer.unbox("RecGroup")) ?? .Unknown
+//        startTs = unboxer.unbox(key:"StartTs", formatter:NSDate.ISO8601SecondFormatter)
+//        endTs = unboxer.unbox(key:"EndTs", formatter:NSDate.ISO8601SecondFormatter)
+        startTsStr = unboxer.unbox(key:"StartTs")
+        recordId = unboxer.unbox(key:"RecordId")
+        status = unboxer.unbox(key: "Status") ?? .Unknown
+        recGroup = (unboxer.unbox(key: "RecGroup")) ?? .Unknown
     }
 }
 
