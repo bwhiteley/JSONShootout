@@ -156,14 +156,14 @@ You can immediately see the similarities between the three projects. I won't get
 All three of the JSON mappers can handle `NSURL`s. They can also handle `NSDate`s with the help of formatters. Marshal and Mapper automatically handle enums with raw types. Unbox requires enums to conform to a special protocol. The power of all three projects lies in the ability to make the JSON mapper aware of new types, whether they be simple fields that can be transformed from a string such as dates, or more complex types and even nested types like our Program and Recording above. 
 ##Type Safety
 
-Marshal and Unbox have an advantage over Mapper because the compiler is aware of what types are supported, so you can't attempt to extract a type that the JSON extractor can't handle. For example, this will compile with Mapper, even though it can never succeed at runtime:
+All three of these projects provide a measure of type safety at compile time. The compiler is aware of what types are supported, so you can't attempt to extract a type that the JSON extractor can't handle. For example, the compiler won't let you try this:
 
-`let name:UIView = try map.from("firstName")`
+`let name: UIView = try json.value(for: "firstName")`
 
-With Marshal and Unbox however, the corresponding code will fail to compile because `UIView` does not conform to the necessary protocol. As a result, Marshal and Unbox are more type safe.
+This code will fail to compile because `UIView` does not conform to the necessary protocol.
 ##Protocol Extensions vs. Wrappers
 
-Both Unbox and Mapper work by wrapping a dictionary in another object. Marshal differs in that it is implemented as a protocol with a protocol extension. Both `NSDictionary` and `Dictionary<String, AnyObject>` conform to the protocol. Any other type implementing `subscript` can conform to the protocol as well. 
+Both Unbox and Mapper work by wrapping a dictionary in another object. Marshal differs in that it is implemented as a protocol with a protocol extension. Both `NSDictionary` and `Dictionary<String, AnyObject>` conform to the protocol. Other types can easily conform to the protocol simply by providing an implementation for `optionalAny(for key: KeyType)`.
 ##What about SwiftyJSON?
 
 SwiftyJSON was one of the earliest projects to help Swift developers deal with JSON. Compared to more recent projects, SwiftyJSON is verbose and error prone. It doesn't take advantage of Swift's type system to enable safety, error handling, and expressive code. As you'll see below, the performance is quite bad as well.
@@ -175,7 +175,7 @@ This graph shows time spent in each of the mappers as well as time spent in `NSJ
 
 ![Performance Graph](https://raw.githubusercontent.com/bwhiteley/JSONShootout/master/images/performance.png)
 
-As you can see, Marshal and Mapper are virtually identical while Unbox and SwiftyJSON are significantly slower. 
+As you can see, Marshal is the most efficient followed by Mapper with SwiftyJSON and Unbox trailing far behind.
 
 ##Conclusion
 If you are looking for a Swift JSON mapper, you might want to clone JSONShootout and compare these frameworks side-by-side yourself. 
