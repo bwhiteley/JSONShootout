@@ -167,6 +167,9 @@ Both Unbox and Mapper work by wrapping a dictionary in another object. Marshal d
 ##What about SwiftyJSON?
 
 SwiftyJSON was one of the earliest projects to help Swift developers deal with JSON. Compared to more recent projects, SwiftyJSON is verbose and error prone. It doesn't take advantage of Swift's type system to enable safety, error handling, and expressive code. As you'll see below, the performance is quite bad as well.
+##What about Argo?
+
+Argo requires two additional dependencies (Curry and Runes) which feels kind of heavy. The liberal use of custom operators is off-putting to many developers. When trying to map to the two model objects above with Argo, the Swift compiler emitted the dreaded error `Expression was too complex to be solved in reasonable time`. As a result Argo is more rigid and the model objects had to be changed to get things to work. Argo was the worst-performing framework tested. Because the model objects had to be changed to get Argo to work, the master branch does not have support for Argo. A separate `argo` branch is available if someone would like to see how it works.
 ##Performance
 Now that we have all three JSON mappers processing the same JSON file, we can compare the performance of each. While measuring performance I noticed that a lot of time was spent in date parsing. Since this was common across all implementations, I removed the dates from the model objects to get a better comparison of the performance of the JSON mappers themselves.
 
@@ -175,7 +178,7 @@ This graph shows time spent in each of the mappers as well as time spent in `NSJ
 
 ![Performance Graph](https://raw.githubusercontent.com/bwhiteley/JSONShootout/master/images/performance.png)
 
-As you can see, Marshal is the most efficient followed by Mapper with SwiftyJSON and Unbox trailing far behind.
+As you can see, Marshal is the most efficient followed by Mapper with SwiftyJSON, Unbox, and Argo trailing far behind.
 
 ##Conclusion
 If you are looking for a Swift JSON mapper, you might want to clone JSONShootout and compare these frameworks side-by-side yourself. 
