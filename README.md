@@ -175,7 +175,7 @@ This graph shows time spent in each of the mappers as well as time spent in `NSJ
 
 ![Performance Graph](https://raw.githubusercontent.com/bwhiteley/JSONShootout/master/images/performance.png)
 
-As you can see, Marshal is the most efficient followed by Mapper with SwiftyJSON and Unbox trailing far behind.
+As you can see, Marshal is the most efficient followed by Mapper with SwiftyJSON, Unbox, and Argo trailing far behind.
 
 ##Conclusion
 If you are looking for a Swift JSON mapper, you might want to clone JSONShootout and compare these frameworks side-by-side yourself. 
