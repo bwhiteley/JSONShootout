@@ -11,6 +11,9 @@ import Marshal
 import Unbox
 import Mapper
 import SwiftyJSON
+import Argo
+import Curry
+import Runes
 
 public struct Program {
     
@@ -22,8 +25,22 @@ public struct Program {
     let description:String?
     let subtitle:String?
     let recording:Recording
-    let season:Int?
-    let episode:Int?
+    let season:String? // Int?
+    let episode:String? // Int?
+}
+
+extension Program: Decodable {
+    public static func decode(_ json: Argo.JSON) -> Decoded<Program> {
+        return curry(Program.init)
+            <^> json <| "Title"
+            <*> json <| ["Channel", "ChanId"]
+            <*> json <|? "Description"
+            <*> json <|? "SubTitle"
+            <*> json <| "Recording"
+            <*> json <|? "Season"
+            <*> json <|? "Episode"
+        
+    }
 }
 
 extension Program: Unmarshaling {
@@ -35,8 +52,10 @@ extension Program: Unmarshaling {
         description = try json.value(for:"Description")
         subtitle = try json.value(for:"SubTitle")
         recording = try json.value(for:"Recording")
-        season = (try json.value(for:"Season") as String?).flatMap({Int($0)})
-        episode = (try json.value(for:"Episode") as String?).flatMap({Int($0)})
+        season = try json.value(for:"Season") //  as String?).flatMap({Int($0)})
+        episode = try json.value(for:"Episode") // as String?).flatMap({Int($0)})
+//        season = (try json.value(for:"Season") as String?).flatMap({Int($0)})
+//        episode = (try json.value(for:"Episode") as String?).flatMap({Int($0)})
     }
 }
 
@@ -49,8 +68,10 @@ extension Program: Unboxable {
         description = unboxer.unbox(key:"Description")
         subtitle = unboxer.unbox(key:"SubTitle")
         recording = unboxer.unbox(key:"Recording")
-        season = (unboxer.unbox(key:"Season") as String?).flatMap({Int($0)})
-        episode = (unboxer.unbox(key:"Episode") as String?).flatMap({Int($0)})
+        season = unboxer.unbox(key:"Season") //  as String?).flatMap({Int($0)})
+        episode = unboxer.unbox(key:"Episode") //  as String?).flatMap({Int($0)})
+//        season = (unboxer.unbox(key:"Season") as String?).flatMap({Int($0)})
+//        episode = (unboxer.unbox(key:"Episode") as String?).flatMap({Int($0)})
     }
 }
 
@@ -63,19 +84,21 @@ extension Program: Mappable {
         description = try map.from("Description")
         subtitle = try map.from("SubTitle")
         recording = try map.from("Recording")
-        season = (try map.from("Season") as String?).flatMap({Int($0)})
-        episode = (try map.from("Episode") as String?).flatMap({Int($0)})
+        season = try map.from("Season") //as String?).flatMap({Int($0)})
+        episode = try map.from("Episode") //as String?).flatMap({Int($0)})
+//        season = (try map.from("Season") as String?).flatMap({Int($0)})
+//        episode = (try map.from("Episode") as String?).flatMap({Int($0)})
     }
 }
 
 extension Program { // SwiftyJSON
-    public init(json:JSON) {
+    public init(json:SwiftyJSON.JSON) {
         title = json["Title"].stringValue
         chanId = json["Channel"]["ChanId"].stringValue
         description = json["Description"].string
         subtitle = json["SubTitle"].string
-        season = json["Season"].int
-        episode = json["Episode"].int
+        season = json["Season"].string // .int
+        episode = json["Episode"].string // .int
         recording = Recording(json: json["Recording"])
     }
 }

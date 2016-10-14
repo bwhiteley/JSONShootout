@@ -12,6 +12,9 @@ import Marshal
 import Unbox
 import Mapper
 import SwiftyJSON
+import Argo
+import Curry
+import Runes
 
 public struct Recording {
     enum Status: String, UnboxableEnum {
@@ -25,10 +28,11 @@ public struct Recording {
         }
     }
     
-    enum RecGroup: String, UnboxableEnum{
+    enum RecGroup: String, UnboxableEnum {
         case Deleted = "Deleted"
         case Default = "Default"
         case LiveTV = "LiveTV"
+        case News = "News"
         case Unknown
         
         static func unboxFallbackValue() -> RecGroup {
@@ -41,9 +45,9 @@ public struct Recording {
 //    let startTs:NSDate?
 //    let endTs:NSDate?
     let startTsStr:String
-    let status:Status
+    let status:Status?
     let recordId:String
-    let recGroup:RecGroup
+    let recGroup:RecGroup?
 }
 
 extension Recording: Unmarshaling {
@@ -80,7 +84,7 @@ extension Recording: Mappable {
 }
 
 extension Recording { // SwiftyJSON
-    init(json:JSON) {
+    init(json:SwiftyJSON.JSON) {
         startTsStr = json["StartTs"].stringValue
         recordId = json["RecordId"].stringValue
         if let raw = json["Status"].string {
@@ -97,4 +101,18 @@ extension Recording { // SwiftyJSON
         }
     }
 }
+
+extension Recording.RecGroup: Decodable {}
+extension Recording.Status: Decodable {}
+
+extension Recording: Decodable {
+    public static func decode(_ json: Argo.JSON) -> Decoded<Recording> {
+        return curry(Recording.init)
+            <^> json <| "StartTs"
+            <*> json <|? "Status"
+            <*> json <| "RecordId"
+            <*> json <|? "RecGroup"
+    }
+}
+
 
