@@ -41,14 +41,14 @@ extension Program: Unmarshaling {
 }
 
 extension Program: Unboxable {
-    public init(unboxer: Unboxer) {
-        title = unboxer.unbox(key:"Title")
-        chanId = unboxer.unbox(key:"Channel.ChanId", isKeyPath: true)
+    public init(unboxer: Unboxer) throws {
+        title = try unboxer.unbox(key:"Title")
+        chanId = try unboxer.unbox(keyPath:"Channel.ChanId")
 //        startTime = unboxer.unbox(key:"StartTime", formatter:NSDate.ISO8601SecondFormatter)
 //        endTime = unboxer.unbox(key:"EndTime", formatter:NSDate.ISO8601SecondFormatter)
         description = unboxer.unbox(key:"Description")
         subtitle = unboxer.unbox(key:"SubTitle")
-        recording = unboxer.unbox(key:"Recording")
+        recording = try unboxer.unbox(key:"Recording")
         season = (unboxer.unbox(key:"Season") as String?).flatMap({Int($0)})
         episode = (unboxer.unbox(key:"Episode") as String?).flatMap({Int($0)})
     }

@@ -1,5 +1,5 @@
 github "utahiosmac/Marshal" "master"
 github "lyft/mapper" "master"
-github "JohnSundell/Unbox" "swift3"
+github "JohnSundell/Unbox" "master"
 github "SwiftyJSON/SwiftyJSON" "master"
 

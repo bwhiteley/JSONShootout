@@ -18,7 +18,7 @@ class Unbox_Tests: XCTestCase {
         
         self.measure {
             let programs:[Program] = try! Unboxer.performCustomUnboxing(dictionary: dict as! UnboxableDictionary) { unboxer in
-                let programs:[Program] = unboxer.unbox(key:"ProgramList.Programs", isKeyPath:true)
+                let programs:[Program] = try! unboxer.unbox(keyPath:"ProgramList.Programs")
                 return programs
             }
             XCTAssert(programs.count > 1000)
