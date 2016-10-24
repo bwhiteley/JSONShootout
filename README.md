@@ -199,5 +199,7 @@ If you would like to add another framework for comparison, submit a pull request
 6. Add the new framework to the Embedded Binaries section of the JSONShootout target.
 7. Make sure there are no duplicates in Linked Frameworks and Libraries (Xcode bug).
 8. Check the project file (`JSONShootout.xcodeproj/project.pbxproj`). There should be no references to `Carthage` or user-specific derived data paths. See [this bug](http://www.openradar.me/radar?id=6091575503355904) for details.
+9. Add new extensions to `Program` and `Recording`. See the existing files for an example. 
+10. Add a new unit test file. See existing files for an example.
 
 <sub>Full Disclosure: I contribute to the Marshal project.</sub>
