@@ -6,12 +6,6 @@
 //  Copyright © 2016 Bart Whiteley. All rights reserved.
 //
 
-import Foundation
-import Marshal
-import Unbox
-import Mapper
-import SwiftyJSON
-
 public struct Program {
     
     let title:String
@@ -26,56 +20,3 @@ public struct Program {
     let episode:Int?
 }
 
-extension Program: Unmarshaling {
-    public init(object json: MarshaledObject) throws {
-        title = try json.value(for:"Title")
-        chanId = try json.value(for:"Channel.ChanId")
-//        startTime = try json.value(for:"StartTime")
-//        endTime = try json.value(for:"EndTime")
-        description = try json.value(for:"Description")
-        subtitle = try json.value(for:"SubTitle")
-        recording = try json.value(for:"Recording")
-        season = (try json.value(for:"Season") as String?).flatMap({Int($0)})
-        episode = (try json.value(for:"Episode") as String?).flatMap({Int($0)})
-    }
-}
-
-extension Program: Unboxable {
-    public init(unboxer: Unboxer) throws {
-        title = try unboxer.unbox(key:"Title")
-        chanId = try unboxer.unbox(keyPath:"Channel.ChanId")
-//        startTime = unboxer.unbox(key:"StartTime", formatter:NSDate.ISO8601SecondFormatter)
-//        endTime = unboxer.unbox(key:"EndTime", formatter:NSDate.ISO8601SecondFormatter)
-        description = unboxer.unbox(key:"Description")
-        subtitle = unboxer.unbox(key:"SubTitle")
-        recording = try unboxer.unbox(key:"Recording")
-        season = (unboxer.unbox(key:"Season") as String?).flatMap({Int($0)})
-        episode = (unboxer.unbox(key:"Episode") as String?).flatMap({Int($0)})
-    }
-}
-
-extension Program: Mappable {
-    public init(map: Mapper) throws {
-        title = try map.from("Title")
-        chanId = try map.from("Channel.ChanId")
-//        startTime = try map.from("StartTime")
-//        endTime = try map.from("EndTime")
-        description = try map.from("Description")
-        subtitle = try map.from("SubTitle")
-        recording = try map.from("Recording")
-        season = (try map.from("Season") as String?).flatMap({Int($0)})
-        episode = (try map.from("Episode") as String?).flatMap({Int($0)})
-    }
-}
-
-extension Program { // SwiftyJSON
-    public init(json:JSON) {
-        title = json["Title"].stringValue
-        chanId = json["Channel"]["ChanId"].stringValue
-        description = json["Description"].string
-        subtitle = json["SubTitle"].string
-        season = json["Season"].int
-        episode = json["Episode"].int
-        recording = Recording(json: json["Recording"])
-    }
-}

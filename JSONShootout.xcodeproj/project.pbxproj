@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71337C8B1DBEBC6B00DCA374 /* Recording+Marshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C8A1DBEBC6B00DCA374 /* Recording+Marshal.swift */; };
+		71337C8D1DBEBC7900DCA374 /* Recording+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C8C1DBEBC7900DCA374 /* Recording+Mapper.swift */; };
+		71337C8F1DBEBC8600DCA374 /* Recording+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C8E1DBEBC8600DCA374 /* Recording+Unbox.swift */; };
+		71337C911DBEBCA300DCA374 /* Recording+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C901DBEBCA300DCA374 /* Recording+SwiftyJSON.swift */; };
+		71337C931DBEBFB400DCA374 /* Program+Marshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C921DBEBFB400DCA374 /* Program+Marshal.swift */; };
+		71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C941DBEBFC300DCA374 /* Program+Mapper.swift */; };
+		71337C971DBEBFD000DCA374 /* Program+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C961DBEBFD000DCA374 /* Program+Unbox.swift */; };
+		71337C991DBEBFDC00DCA374 /* Program+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */; };
 		CC3023411CF9616600B51746 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C51CEBACE8005A5DEA /* Unbox.framework */; };
 		CC3023421CF9616600B51746 /* Unbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C51CEBACE8005A5DEA /* Unbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C31CEBACD5005A5DEA /* Marshal.framework */; };
@@ -73,6 +81,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		71337C8A1DBEBC6B00DCA374 /* Recording+Marshal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Marshal.swift"; sourceTree = "<group>"; };
+		71337C8C1DBEBC7900DCA374 /* Recording+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Mapper.swift"; sourceTree = "<group>"; };
+		71337C8E1DBEBC8600DCA374 /* Recording+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Unbox.swift"; sourceTree = "<group>"; };
+		71337C901DBEBCA300DCA374 /* Recording+SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+SwiftyJSON.swift"; sourceTree = "<group>"; };
+		71337C921DBEBFB400DCA374 /* Program+Marshal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Marshal.swift"; sourceTree = "<group>"; };
+		71337C941DBEBFC300DCA374 /* Program+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Mapper.swift"; sourceTree = "<group>"; };
+		71337C961DBEBFD000DCA374 /* Program+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Unbox.swift"; sourceTree = "<group>"; };
+		71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+SwiftyJSON.swift"; sourceTree = "<group>"; };
 		CC3023471CF9692700B51746 /* Mapper_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper_Tests.swift; sourceTree = "<group>"; };
 		CC3023481CF9692700B51746 /* Marshal_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marshal_Tests.swift; sourceTree = "<group>"; };
 		CC3023491CF9692700B51746 /* Unbox_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unbox_Tests.swift; sourceTree = "<group>"; };
@@ -191,6 +207,14 @@
 				CC9786BB1CEBAC14005A5DEA /* Recording.swift */,
 				CC9786BD1CEBAC21005A5DEA /* Program.swift */,
 				CC9786BF1CEBAC6C005A5DEA /* NSDate+JSON.swift */,
+				71337C8A1DBEBC6B00DCA374 /* Recording+Marshal.swift */,
+				71337C8C1DBEBC7900DCA374 /* Recording+Mapper.swift */,
+				71337C8E1DBEBC8600DCA374 /* Recording+Unbox.swift */,
+				71337C901DBEBCA300DCA374 /* Recording+SwiftyJSON.swift */,
+				71337C921DBEBFB400DCA374 /* Program+Marshal.swift */,
+				71337C941DBEBFC300DCA374 /* Program+Mapper.swift */,
+				71337C961DBEBFD000DCA374 /* Program+Unbox.swift */,
+				71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -361,8 +385,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71337C8F1DBEBC8600DCA374 /* Recording+Unbox.swift in Sources */,
+				71337C971DBEBFD000DCA374 /* Program+Unbox.swift in Sources */,
 				CC9786BE1CEBAC21005A5DEA /* Program.swift in Sources */,
+				71337C8D1DBEBC7900DCA374 /* Recording+Mapper.swift in Sources */,
+				71337C991DBEBFDC00DCA374 /* Program+SwiftyJSON.swift in Sources */,
+				71337C931DBEBFB400DCA374 /* Program+Marshal.swift in Sources */,
 				CC9786C01CEBAC6C005A5DEA /* NSDate+JSON.swift in Sources */,
+				71337C911DBEBCA300DCA374 /* Recording+SwiftyJSON.swift in Sources */,
+				71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */,
+				71337C8B1DBEBC6B00DCA374 /* Recording+Marshal.swift in Sources */,
 				CC9786BC1CEBAC14005A5DEA /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
