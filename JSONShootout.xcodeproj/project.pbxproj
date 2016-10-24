@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BAB43C31DBE06A90017C770 /* ModelObjects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97869E1CEBABE7005A5DEA /* ModelObjects.framework */; };
+		5BAB43C91DBE06A90017C770 /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAB43C51DBE06A90017C770 /* Mapper.framework */; };
+		5BAB43CA1DBE06A90017C770 /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAB43C61DBE06A90017C770 /* Marshal.framework */; };
+		5BAB43CB1DBE06A90017C770 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAB43C71DBE06A90017C770 /* SwiftyJSON.framework */; };
+		5BAB43CC1DBE06A90017C770 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAB43C81DBE06A90017C770 /* Unbox.framework */; };
+		5BAB43E31DBE07D50017C770 /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAB43E21DBE07D50017C770 /* Decodable.framework */; };
+		5BAB43E51DBE07DD0017C770 /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAB43E41DBE07DD0017C770 /* Decodable.framework */; };
+		5BAB43E71DBE07E10017C770 /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAB43E61DBE07E10017C770 /* Decodable.framework */; };
+		5BAB43E91DBE07FD0017C770 /* Decodable_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAB43E81DBE07FD0017C770 /* Decodable_Tests.swift */; };
 		CC3023411CF9616600B51746 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C51CEBACE8005A5DEA /* Unbox.framework */; };
 		CC3023421CF9616600B51746 /* Unbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C51CEBACE8005A5DEA /* Unbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C31CEBACD5005A5DEA /* Marshal.framework */; };
@@ -73,6 +82,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5BAB43C51DBE06A90017C770 /* Mapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapper.framework; path = "../../Library/Developer/Xcode/DerivedData/JSONShootout-bkocarfdpnsffvahaikdrlrmawsu/Build/Products/Debug-iphonesimulator/Mapper.framework"; sourceTree = "<group>"; };
+		5BAB43C61DBE06A90017C770 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = "../../Library/Developer/Xcode/DerivedData/JSONShootout-bkocarfdpnsffvahaikdrlrmawsu/Build/Products/Debug-iphonesimulator/Marshal.framework"; sourceTree = "<group>"; };
+		5BAB43C71DBE06A90017C770 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/JSONShootout-bkocarfdpnsffvahaikdrlrmawsu/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		5BAB43C81DBE06A90017C770 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = "../../Library/Developer/Xcode/DerivedData/JSONShootout-bkocarfdpnsffvahaikdrlrmawsu/Build/Products/Debug-iphonesimulator/Unbox.framework"; sourceTree = "<group>"; };
+		5BAB43E21DBE07D50017C770 /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = "Carthage/Checkouts/Decodable/build/Debug-iphoneos/Decodable.framework"; sourceTree = "<group>"; };
+		5BAB43E41DBE07DD0017C770 /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = "Carthage/Checkouts/Decodable/build/Debug-iphoneos/Decodable.framework"; sourceTree = "<group>"; };
+		5BAB43E61DBE07E10017C770 /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = "Carthage/Checkouts/Decodable/build/Debug-iphoneos/Decodable.framework"; sourceTree = "<group>"; };
+		5BAB43E81DBE07FD0017C770 /* Decodable_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable_Tests.swift; sourceTree = "<group>"; };
 		CC3023471CF9692700B51746 /* Mapper_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper_Tests.swift; sourceTree = "<group>"; };
 		CC3023481CF9692700B51746 /* Marshal_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marshal_Tests.swift; sourceTree = "<group>"; };
 		CC3023491CF9692700B51746 /* Unbox_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unbox_Tests.swift; sourceTree = "<group>"; };
@@ -104,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAB43E51DBE07DD0017C770 /* Decodable.framework in Frameworks */,
 				CCFD5B551D0A718C0021C2B3 /* SwiftyJSON.framework in Frameworks */,
 				CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */,
 				CC3023451CF9616700B51746 /* Mapper.framework in Frameworks */,
@@ -116,6 +134,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAB43E71DBE07E10017C770 /* Decodable.framework in Frameworks */,
+				5BAB43C91DBE06A90017C770 /* Mapper.framework in Frameworks */,
+				5BAB43CA1DBE06A90017C770 /* Marshal.framework in Frameworks */,
+				5BAB43CB1DBE06A90017C770 /* SwiftyJSON.framework in Frameworks */,
+				5BAB43CC1DBE06A90017C770 /* Unbox.framework in Frameworks */,
+				5BAB43C31DBE06A90017C770 /* ModelObjects.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAB43E31DBE07D50017C770 /* Decodable.framework in Frameworks */,
 				CCD510591CFFFB4C00E9C0D1 /* SwiftyJSON.framework in Frameworks */,
 				CC9786C61CEBACE8005A5DEA /* Unbox.framework in Frameworks */,
 				CC9786C41CEBACD5005A5DEA /* Marshal.framework in Frameworks */,
@@ -133,6 +158,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BAB43C41DBE06A90017C770 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BAB43E61DBE07E10017C770 /* Decodable.framework */,
+				5BAB43E41DBE07DD0017C770 /* Decodable.framework */,
+				5BAB43E21DBE07D50017C770 /* Decodable.framework */,
+				5BAB43C51DBE06A90017C770 /* Mapper.framework */,
+				5BAB43C61DBE06A90017C770 /* Marshal.framework */,
+				5BAB43C71DBE06A90017C770 /* SwiftyJSON.framework */,
+				5BAB43C81DBE06A90017C770 /* Unbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CC5A19F51CEADE59007238F3 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +183,7 @@
 				CC5A1A151CEADE59007238F3 /* JSONShootoutTests */,
 				CC97869F1CEBABE7005A5DEA /* ModelObjects */,
 				CC5A19FF1CEADE59007238F3 /* Products */,
+				5BAB43C41DBE06A90017C770 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +217,7 @@
 				CC3023481CF9692700B51746 /* Marshal_Tests.swift */,
 				CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */,
 				CC3023491CF9692700B51746 /* Unbox_Tests.swift */,
+				5BAB43E81DBE07FD0017C770 /* Decodable_Tests.swift */,
 				CC5A1A4C1CEAE182007238F3 /* Large.json */,
 				CC5A1A181CEADE59007238F3 /* Info.plist */,
 			);
@@ -353,6 +394,7 @@
 				CC30234B1CF9692700B51746 /* Marshal_Tests.swift in Sources */,
 				CC30234A1CF9692700B51746 /* Mapper_Tests.swift in Sources */,
 				CC30234C1CF9692700B51746 /* Unbox_Tests.swift in Sources */,
+				5BAB43E91DBE07FD0017C770 /* Decodable_Tests.swift in Sources */,
 				CCD5105B1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +537,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Decodable/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = JSONShootout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.JSONShootout";
@@ -508,6 +554,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Decodable/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = JSONShootout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.JSONShootout";
@@ -519,8 +569,12 @@
 		CC5A1A1F1CEADE59007238F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Decodable/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = JSONShootoutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS) $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.JSONShootoutTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -530,8 +584,12 @@
 		CC5A1A201CEADE59007238F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Decodable/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = JSONShootoutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS) $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.JSONShootoutTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -548,7 +606,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Decodable/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ModelObjects/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -573,7 +634,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Decodable/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ModelObjects/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

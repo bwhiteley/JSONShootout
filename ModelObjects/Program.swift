@@ -11,6 +11,8 @@ import Marshal
 import Unbox
 import Mapper
 import SwiftyJSON
+import Decodable
+
 
 public struct Program {
     
@@ -65,6 +67,22 @@ extension Program: Mappable {
         recording = try map.from("Recording")
         season = (try map.from("Season") as String?).flatMap({Int($0)})
         episode = (try map.from("Episode") as String?).flatMap({Int($0)})
+    }
+}
+
+extension Program: Decodable {
+    public static func decode(_ json: Any) throws -> Program {
+        return try Program(
+            title: json => "Title",
+            chanId: json => "Channel" => "ChanId",
+//          startTime = json => "StartTime",
+//          endTime = json => "EndTime",
+            description: json => "Description",
+            subtitle: json => "SubTitle",
+            recording: json => "Recording",
+            season: Int(json => "Season" as String),
+            episode: Int(json => "Episode" as String)
+        )
     }
 }
 

@@ -12,6 +12,7 @@ import Marshal
 import Unbox
 import Mapper
 import SwiftyJSON
+import Decodable
 
 public struct Recording {
     enum Status: String, UnboxableEnum {
@@ -78,6 +79,18 @@ extension Recording: Mappable {
         recGroup = map.optionalFrom("RecGroup") ?? .Unknown
     }
 }
+
+extension Recording : Decodable {
+    public static func decode(_ json: Any) throws -> Recording {
+        return try Recording(
+            startTsStr: json => "StartTs",
+            status: Status(rawValue: json => "Status") ?? .Unknown,
+            recordId: json => "RecordId",
+            recGroup: RecGroup(rawValue: json => "RecGroup") ?? .Unknown
+        )
+    }
+}
+
 
 extension Recording { // SwiftyJSON
     init(json:JSON) {

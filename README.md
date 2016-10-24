@@ -6,6 +6,7 @@ Many projects have emerged to take on this challenge, employing various approach
 * [Marshal](https://github.com/utahiosmac/Marshal)
 * [Mapper](https://github.com/lyft/mapper)
 * [Unbox](https://github.com/JohnSundell/Unbox)
+* [Decodable](https://github.com/Anviking/Decodable)
 
 The power of the approach taken by these projects lies in the ability to easily map not only primitive JSON types, but also custom types and objects in a type safe manner.
 
@@ -146,6 +147,44 @@ let programs:[Program] = try! performCustomUnboxing(data: data) { unboxer in
     let programs:[Program] = unboxer.unbox(key: "ProgramList.Programs", isKeyPath:true)
     return programs
 }
+
+
+###Decodable
+
+```swift
+extension Recording : Decodable {
+    public static func decode(_ json: Any) throws -> Recording {
+        return try Recording(
+            startTsStr: json => "StartTs",
+            status: Status(rawValue: json => "Status") ?? .Unknown,
+            recordId: json => "RecordId",
+            recGroup: RecGroup(rawValue: json => "RecGroup") ?? .Unknown
+        )
+    }
+}
+
+extension Program: Decodable {
+    public static func decode(_ json: Any) throws -> Program {
+        return try Program(
+            title: json => "Title",
+            chanId: json => "Channel" => "ChanId",
+            startTime = json => "StartTime",
+            endTime = json => "EndTime",
+            description: json => "Description",
+            subtitle: json => "SubTitle",
+            recording: json => "Recording",
+            season: Int(json => "Season" as String),
+            episode: Int(json => "Episode" as String)
+        )
+    }
+}
+
+// Extract an array of Programs
+let dict = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
+let programs:[Program] = try! dict => "ProgramList" => "Programs"
+```
+
+
 ```
 ##Analysis
 You can immediately see the similarities between the three projects. I won't get into the details of how they work here. You can read more about each project, or read Jason Larson's 
