@@ -13,8 +13,8 @@ The power of the approach taken by these projects lies in the ability to easily 
 For example, the goal is to be able to do something like this: 
 
 ```swift
-let title:String = try json.valueForKey("header.title")
-let users:[User] = try json.valueForKey("users")
+let title:String = try json.value(for: "header.title")
+let users:[User] = try json.value(for: "users")
 ```
 
 All of the frameworks listed above leverage Swift's powerful type system to handle all of the details. 
@@ -227,6 +227,18 @@ If you are looking for a Swift JSON mapper, you might want to clone JSONShootout
 3. Open the workspace
 4. Run the unit tests in the JSONShootoutTests target
 
+##Contributing
+If you would like to add another framework for comparison, submit a pull request after making the following changes: 
 
+1. Add the new framework to the `Cartfile`.
+2. Run `carthage update --no-build`.
+3. Drag the new framework project to the top level of the workspace.
+4. Add the new framework to the Linked Frameworks and Libraries section of the ModelObjects target.
+5. Add the new framework to the Linked Frameworks and Libraries section of the JSONShootout target. 
+6. Add the new framework to the Embedded Binaries section of the JSONShootout target.
+7. Make sure there are no duplicates in Linked Frameworks and Libraries (Xcode bug).
+8. Check the project file (`JSONShootout.xcodeproj/project.pbxproj`). There should be no references to `Carthage` or user-specific derived data paths. See [this bug](http://www.openradar.me/radar?id=6091575503355904) for details.
+9. Add new extensions to `Program` and `Recording`. See the existing files for an example. 
+10. Add a new unit test file. See existing files for an example.
 
 <sub>Full Disclosure: I contribute to the Marshal project.</sub>

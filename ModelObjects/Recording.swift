@@ -6,13 +6,7 @@
 //  Copyright © 2016 Bart Whiteley. All rights reserved.
 //
 
-import Foundation
-
-import Marshal
 import Unbox
-import Mapper
-import SwiftyJSON
-import Decodable
 
 public struct Recording {
     enum Status: String, UnboxableEnum {
@@ -20,18 +14,20 @@ public struct Recording {
         case Recorded = "-3"
         case Recording = "-2"
         case Unknown
-        
+       
+        // compiler segfaults if we move this to an extension
         static func unboxFallbackValue() -> Status {
             return .Unknown
         }
     }
     
-    enum RecGroup: String, UnboxableEnum{
+    enum RecGroup: String, UnboxableEnum {
         case Deleted = "Deleted"
         case Default = "Default"
         case LiveTV = "LiveTV"
         case Unknown
         
+        // compiler segfaults if we move this to an extension
         static func unboxFallbackValue() -> RecGroup {
             return .Unknown
         }
@@ -46,68 +42,3 @@ public struct Recording {
     let recordId:String
     let recGroup:RecGroup
 }
-
-extension Recording: Unmarshaling {
-    public init(object json:MarshaledObject) throws {
-//        startTs = try? json.value(for:"StartTs")
-//        endTs = try? json.value(for:"EndTs")
-        startTsStr = try json.value(for:"StartTs")
-        recordId = try json.value(for:"RecordId")
-        status = (try? json.value(for:"Status")) ?? .Unknown
-        recGroup = (try? json.value(for:"RecGroup")) ?? .Unknown
-    }
-}
-
-extension Recording: Unboxable {
-    public init(unboxer: Unboxer) throws {
-//        startTs = unboxer.unbox(key:"StartTs", formatter:NSDate.ISO8601SecondFormatter)
-//        endTs = unboxer.unbox(key:"EndTs", formatter:NSDate.ISO8601SecondFormatter)
-        startTsStr = try unboxer.unbox(key:"StartTs")
-        recordId = try unboxer.unbox(key:"RecordId")
-        status = unboxer.unbox(key: "Status") ?? .Unknown
-        recGroup = (unboxer.unbox(key: "RecGroup")) ?? .Unknown
-    }
-}
-
-extension Recording: Mappable {
-    public init(map: Mapper) throws {
-//        startTs =  map.optionalFrom("StartTs")
-//        endTs =  map.optionalFrom("EndTs")
-        startTsStr = try map.from("StartTs")
-        recordId = try map.from("RecordId")
-        status = map.optionalFrom("Status") ?? .Unknown
-        recGroup = map.optionalFrom("RecGroup") ?? .Unknown
-    }
-}
-
-extension Recording : Decodable {
-    public static func decode(_ json: Any) throws -> Recording {
-        return try Recording(
-            startTsStr: json => "StartTs",
-            status: Status(rawValue: json => "Status") ?? .Unknown,
-            recordId: json => "RecordId",
-            recGroup: RecGroup(rawValue: json => "RecGroup") ?? .Unknown
-        )
-    }
-}
-
-
-extension Recording { // SwiftyJSON
-    init(json:JSON) {
-        startTsStr = json["StartTs"].stringValue
-        recordId = json["RecordId"].stringValue
-        if let raw = json["Status"].string {
-            status = Status(rawValue: raw) ?? .Unknown
-        }
-        else {
-            status = .Unknown
-        }
-        if let raw = json["RecGroup"].string {
-            recGroup = RecGroup(rawValue: raw) ?? .Unknown
-        }
-        else {
-            recGroup = .Unknown
-        }
-    }
-}
-
