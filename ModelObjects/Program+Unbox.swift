@@ -14,8 +14,8 @@ extension Program: Unboxable {
         description = unboxer.unbox(key:"Description")
         subtitle = unboxer.unbox(key:"SubTitle")
         recording = try unboxer.unbox(key:"Recording")
-        season = (unboxer.unbox(key:"Season") as String?).flatMap({Int($0)})
-        episode = (unboxer.unbox(key:"Episode") as String?).flatMap({Int($0)})
+        season = unboxer.unbox(key:"Season")
+        episode = unboxer.unbox(key:"Episode")
     }
 }
 

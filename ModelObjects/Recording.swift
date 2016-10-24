@@ -14,11 +14,6 @@ public struct Recording {
         case Recorded = "-3"
         case Recording = "-2"
         case Unknown
-       
-        // compiler segfaults if we move this to an extension
-        static func unboxFallbackValue() -> Status {
-            return .Unknown
-        }
     }
     
     enum RecGroup: String, UnboxableEnum {
@@ -26,11 +21,6 @@ public struct Recording {
         case Default = "Default"
         case LiveTV = "LiveTV"
         case Unknown
-        
-        // compiler segfaults if we move this to an extension
-        static func unboxFallbackValue() -> RecGroup {
-            return .Unknown
-        }
     }
     
     
