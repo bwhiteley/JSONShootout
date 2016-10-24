@@ -19,3 +19,4 @@ public struct Program {
     let season:Int?
     let episode:Int?
 }
+
