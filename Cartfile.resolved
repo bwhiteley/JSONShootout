@@ -1,4 +1,5 @@
 github "utahiosmac/Marshal" "282cdc05d08175aba4d02328d9dcf3736d56e3e2"
+github "Hearst-DD/ObjectMapper" "2.2.0"
 github "SwiftyJSON/SwiftyJSON" "6a0c3a82e2b4a07723b4958146315c7928220189"
 github "JohnSundell/Unbox" "0be5e80a43b247a10d4a2f08150b847c7e784967"
 github "lyft/mapper" "8f5b51bee8627eaa162eb42953ef0a6521880041"
