@@ -117,35 +117,33 @@ let programs:[Program] = try! mapper.from("ProgramList.Programs")
 
 ```swift
 extension Recording: Unboxable {
-    public init(unboxer: Unboxer) {
+    public init(unboxer: Unboxer) throws {
         startTs = unboxer.unbox(key: "StartTs", formatter:NSDate.ISO8601SecondFormatter)
         endTs = unboxer.unbox(key: "EndTs", formatter:NSDate.ISO8601SecondFormatter)
-        startTsStr = unboxer.unbox(key: "StartTs")
-        recordId = unboxer.unbox(key: "RecordId")
+        startTsStr = try unboxer.unbox(key: "StartTs")
+        recordId = try unboxer.unbox(key: "RecordId")
         status = unboxer.unbox(key: "Status") ?? .Unknown
-        recGroup = (unboxer.unbox(key: "RecGroup")) ?? .Unknown
+        recGroup = unboxer.unbox(key: "RecGroup") ?? .Unknown
     }
 }
 
 extension Program: Unboxable {
-    public init(unboxer: Unboxer) {
-        title = unboxer.unbox(key: "Title")
-        chanId = unboxer.unbox(key: "Channel.ChanId", isKeyPath: true)
-        startTime = unboxer.unbox(key: "StartTime", formatter:NSDate.ISO8601SecondFormatter)
-        endTime = unboxer.unbox(key: "EndTime", formatter:NSDate.ISO8601SecondFormatter)
+    public init(unboxer: Unboxer) throws {
+        title = try unboxer.unbox(key: "Title")
+        chanId = try unboxer.unbox(keyPath: "Channel.ChanId")
+        startTime = try unboxer.unbox(key: "StartTime", formatter:NSDate.ISO8601SecondFormatter)
+        endTime = try unboxer.unbox(key: "EndTime", formatter:NSDate.ISO8601SecondFormatter)
         description = unboxer.unbox(key: "Description")
         subtitle = unboxer.unbox(key: "SubTitle")
-        recording = unboxer.unbox(key: "Recording")
-        season = (unboxer.unbox(key: "Season") as String?).flatMap({Int($0)})
-        episode = (unboxer.unbox(key: "Episode") as String?).flatMap({Int($0)})
+        recording = try unboxer.unbox(key: "Recording")
+        season = unboxer.unbox(key: "Season")
+        episode = unboxer.unbox(key: "Episode")
     }
 }
 
 // Extract an array of Programs
-let programs:[Program] = try! performCustomUnboxing(data: data) { unboxer in
-    let programs:[Program] = unboxer.unbox(key: "ProgramList.Programs", isKeyPath:true)
-    return programs
-}
+let dict = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! UnboxableDictionary
+let programs:[Program] = try! unbox(dictionary: dict, atKeyPath: "ProgramList.Programs")
 ```
 ##Analysis
 You can immediately see the similarities between the three projects. I won't get into the details of how they work here. You can read more about each project, or read Jason Larson's 

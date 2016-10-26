@@ -17,10 +17,7 @@ class Unbox_Tests: XCTestCase {
         let dict = try! JSONSerialization.jsonObject(with: self.data, options: [])
         
         self.measure {
-            let programs:[Program] = try! Unboxer.performCustomUnboxing(dictionary: dict as! UnboxableDictionary) { unboxer in
-                let programs:[Program] = try! unboxer.unbox(keyPath:"ProgramList.Programs")
-                return programs
-            }
+            let programs:[Program] = try! unbox(dictionary: dict as! UnboxableDictionary, atKeyPath: "ProgramList.Programs")
             XCTAssert(programs.count > 1000)
         }
     }
