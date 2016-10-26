@@ -10,7 +10,6 @@
 		5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */; };
 		5B69A1DC1DBEC86A00B12579 /* Program+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */; };
 		5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */; };
-		5BA72EC81DBECA48007ADBAE /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA72EC71DBECA48007ADBAE /* Decodable.framework */; };
 		5BA72ECF1DBECC0C007ADBAE /* ModelObjects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97869E1CEBABE7005A5DEA /* ModelObjects.framework */; };
 		5BA72ED31DBECD52007ADBAE /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA72EC71DBECA48007ADBAE /* Decodable.framework */; };
 		71337C8B1DBEBC6B00DCA374 /* Recording+Marshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C8A1DBEBC6B00DCA374 /* Recording+Marshal.swift */; };
@@ -36,6 +35,8 @@
 		CC5A1A091CEADE59007238F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5A1A081CEADE59007238F3 /* Assets.xcassets */; };
 		CC5A1A0C1CEADE59007238F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A1A0A1CEADE59007238F3 /* LaunchScreen.storyboard */; };
 		CC5A1A4D1CEAE182007238F3 /* Large.json in Resources */ = {isa = PBXBuildFile; fileRef = CC5A1A4C1CEAE182007238F3 /* Large.json */; };
+		CC7A7FB71DC053E400A69A0B /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA72EC71DBECA48007ADBAE /* Decodable.framework */; };
+		CC7A7FB81DC053E400A69A0B /* Decodable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA72EC71DBECA48007ADBAE /* Decodable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC9786A11CEBABE7005A5DEA /* ModelObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = CC9786A01CEBABE7005A5DEA /* ModelObjects.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC9786B31CEBABE7005A5DEA /* ModelObjects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97869E1CEBABE7005A5DEA /* ModelObjects.framework */; };
 		CC9786B41CEBABE7005A5DEA /* ModelObjects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC97869E1CEBABE7005A5DEA /* ModelObjects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -75,6 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CC7A7FB81DC053E400A69A0B /* Decodable.framework in Embed Frameworks */,
 				CC3023441CF9616600B51746 /* Marshal.framework in Embed Frameworks */,
 				CC3023461CF9616700B51746 /* Mapper.framework in Embed Frameworks */,
 				CC9786B41CEBABE7005A5DEA /* ModelObjects.framework in Embed Frameworks */,
@@ -130,8 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BA72EC81DBECA48007ADBAE /* Decodable.framework in Frameworks */,
 				CCFD5B551D0A718C0021C2B3 /* SwiftyJSON.framework in Frameworks */,
+				CC7A7FB71DC053E400A69A0B /* Decodable.framework in Frameworks */,
 				CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */,
 				CC3023451CF9616700B51746 /* Mapper.framework in Frameworks */,
 				CC9786B31CEBABE7005A5DEA /* ModelObjects.framework in Frameworks */,
