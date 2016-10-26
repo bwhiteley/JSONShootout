@@ -26,6 +26,11 @@
 		71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C941DBEBFC300DCA374 /* Program+Mapper.swift */; };
 		71337C971DBEBFD000DCA374 /* Program+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C961DBEBFD000DCA374 /* Program+Unbox.swift */; };
 		71337C991DBEBFDC00DCA374 /* Program+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */; };
+		AA2B38CB1DC0B4AE008CECCD /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B38CA1DC0B4AE008CECCD /* JSON.framework */; };
+		AA2B38CC1DC0B4AE008CECCD /* JSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B38CA1DC0B4AE008CECCD /* JSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA2B38D01DC0B4D2008CECCD /* Program+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B38CD1DC0B4CC008CECCD /* Program+JSON.swift */; };
+		AA2B38D21DC0B57F008CECCD /* Recording+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B38D11DC0B57F008CECCD /* Recording+JSON.swift */; };
+		AA2B38D41DC0B6D3008CECCD /* JSON_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B38D31DC0B6D3008CECCD /* JSON_Tests.swift */; };
 		CC3023411CF9616600B51746 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C51CEBACE8005A5DEA /* Unbox.framework */; };
 		CC3023421CF9616600B51746 /* Unbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C51CEBACE8005A5DEA /* Unbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C31CEBACD5005A5DEA /* Marshal.framework */; };
@@ -86,6 +91,7 @@
 				681299071DBFFCBC009960BE /* ObjectMapper.framework in Embed Frameworks */,
 				CC3023441CF9616600B51746 /* Marshal.framework in Embed Frameworks */,
 				CC3023461CF9616700B51746 /* Mapper.framework in Embed Frameworks */,
+				AA2B38CC1DC0B4AE008CECCD /* JSON.framework in Embed Frameworks */,
 				CC9786B41CEBABE7005A5DEA /* ModelObjects.framework in Embed Frameworks */,
 				CC3023421CF9616600B51746 /* Unbox.framework in Embed Frameworks */,
 				CCFD5B571D0A71990021C2B3 /* SwiftyJSON.framework in Embed Frameworks */,
@@ -112,6 +118,10 @@
 		71337C941DBEBFC300DCA374 /* Program+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Mapper.swift"; sourceTree = "<group>"; };
 		71337C961DBEBFD000DCA374 /* Program+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Unbox.swift"; sourceTree = "<group>"; };
 		71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+SwiftyJSON.swift"; sourceTree = "<group>"; };
+		AA2B38CA1DC0B4AE008CECCD /* JSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2B38CD1DC0B4CC008CECCD /* Program+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Program+JSON.swift"; sourceTree = "<group>"; tabWidth = 4; };
+		AA2B38D11DC0B57F008CECCD /* Recording+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+JSON.swift"; sourceTree = "<group>"; };
+		AA2B38D31DC0B6D3008CECCD /* JSON_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON_Tests.swift; sourceTree = "<group>"; };
 		CC3023471CF9692700B51746 /* Mapper_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper_Tests.swift; sourceTree = "<group>"; };
 		CC3023481CF9692700B51746 /* Marshal_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marshal_Tests.swift; sourceTree = "<group>"; };
 		CC3023491CF9692700B51746 /* Unbox_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unbox_Tests.swift; sourceTree = "<group>"; };
@@ -147,6 +157,7 @@
 				CCFD5B551D0A718C0021C2B3 /* SwiftyJSON.framework in Frameworks */,
 				CC7A7FB71DC053E400A69A0B /* Decodable.framework in Frameworks */,
 				CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */,
+				AA2B38CB1DC0B4AE008CECCD /* JSON.framework in Frameworks */,
 				CC3023451CF9616700B51746 /* Mapper.framework in Frameworks */,
 				CC9786B31CEBABE7005A5DEA /* ModelObjects.framework in Frameworks */,
 				CC3023411CF9616600B51746 /* Unbox.framework in Frameworks */,
@@ -180,6 +191,7 @@
 		CC5A19F51CEADE59007238F3 = {
 			isa = PBXGroup;
 			children = (
+				AA2B38CA1DC0B4AE008CECCD /* JSON.framework */,
 				5BA72EC71DBECA48007ADBAE /* Decodable.framework */,
 				CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */,
 				681299041DBFFCAB009960BE /* ObjectMapper.framework */,
@@ -225,6 +237,7 @@
 				CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */,
 				681299171DC00DB1009960BE /* ObjectMapper_Test.swift */,
 				CC3023491CF9692700B51746 /* Unbox_Tests.swift */,
+				AA2B38D31DC0B6D3008CECCD /* JSON_Tests.swift */,
 				CC5A1A4C1CEAE182007238F3 /* Large.json */,
 				CC5A1A181CEADE59007238F3 /* Info.plist */,
 			);
@@ -245,12 +258,14 @@
 				71337C901DBEBCA300DCA374 /* Recording+SwiftyJSON.swift */,
 				5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */,
 				6812991A1DC00DBB009960BE /* Recording+ObjectMapper.swift */,
+				AA2B38D11DC0B57F008CECCD /* Recording+JSON.swift */,
 				71337C921DBEBFB400DCA374 /* Program+Marshal.swift */,
 				71337C941DBEBFC300DCA374 /* Program+Mapper.swift */,
 				71337C961DBEBFD000DCA374 /* Program+Unbox.swift */,
 				71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */,
 				5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */,
 				681299191DC00DBB009960BE /* Program+ObjectMapper.swift */,
+				AA2B38CD1DC0B4CC008CECCD /* Program+JSON.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -414,6 +429,7 @@
 				CC30234B1CF9692700B51746 /* Marshal_Tests.swift in Sources */,
 				CC30234A1CF9692700B51746 /* Mapper_Tests.swift in Sources */,
 				CC30234C1CF9692700B51746 /* Unbox_Tests.swift in Sources */,
+				AA2B38D41DC0B6D3008CECCD /* JSON_Tests.swift in Sources */,
 				5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */,
 				CCD5105B1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift in Sources */,
 				681299181DC00DB1009960BE /* ObjectMapper_Test.swift in Sources */,
@@ -434,7 +450,9 @@
 				71337C931DBEBFB400DCA374 /* Program+Marshal.swift in Sources */,
 				CC9786C01CEBAC6C005A5DEA /* NSDate+JSON.swift in Sources */,
 				5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */,
+				AA2B38D01DC0B4D2008CECCD /* Program+JSON.swift in Sources */,
 				5B69A1DC1DBEC86A00B12579 /* Program+Decodable.swift in Sources */,
+				AA2B38D21DC0B57F008CECCD /* Recording+JSON.swift in Sources */,
 				71337C911DBEBCA300DCA374 /* Recording+SwiftyJSON.swift in Sources */,
 				71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */,
 				71337C8B1DBEBC6B00DCA374 /* Recording+Marshal.swift in Sources */,
