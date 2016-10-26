@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */; };
+		5B69A1DC1DBEC86A00B12579 /* Program+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */; };
+		5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */; };
+		5BA72EC81DBECA48007ADBAE /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA72EC71DBECA48007ADBAE /* Decodable.framework */; };
+		5BA72ECF1DBECC0C007ADBAE /* ModelObjects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97869E1CEBABE7005A5DEA /* ModelObjects.framework */; };
+		5BA72ED31DBECD52007ADBAE /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA72EC71DBECA48007ADBAE /* Decodable.framework */; };
 		71337C8B1DBEBC6B00DCA374 /* Recording+Marshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C8A1DBEBC6B00DCA374 /* Recording+Marshal.swift */; };
 		71337C8D1DBEBC7900DCA374 /* Recording+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C8C1DBEBC7900DCA374 /* Recording+Mapper.swift */; };
 		71337C8F1DBEBC8600DCA374 /* Recording+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C8E1DBEBC8600DCA374 /* Recording+Unbox.swift */; };
@@ -81,6 +87,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Decodable.swift"; sourceTree = "<group>"; };
+		5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Decodable.swift"; sourceTree = "<group>"; };
+		5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable_Tests.swift; sourceTree = "<group>"; };
+		5BA72EC71DBECA48007ADBAE /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Decodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71337C8A1DBEBC6B00DCA374 /* Recording+Marshal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Marshal.swift"; sourceTree = "<group>"; };
 		71337C8C1DBEBC7900DCA374 /* Recording+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Mapper.swift"; sourceTree = "<group>"; };
 		71337C8E1DBEBC8600DCA374 /* Recording+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Unbox.swift"; sourceTree = "<group>"; };
@@ -120,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA72EC81DBECA48007ADBAE /* Decodable.framework in Frameworks */,
 				CCFD5B551D0A718C0021C2B3 /* SwiftyJSON.framework in Frameworks */,
 				CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */,
 				CC3023451CF9616700B51746 /* Mapper.framework in Frameworks */,
@@ -132,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA72ECF1DBECC0C007ADBAE /* ModelObjects.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +155,7 @@
 				CC9786C61CEBACE8005A5DEA /* Unbox.framework in Frameworks */,
 				CC9786C41CEBACD5005A5DEA /* Marshal.framework in Frameworks */,
 				CC9786C21CEBACD0005A5DEA /* Mapper.framework in Frameworks */,
+				5BA72ED31DBECD52007ADBAE /* Decodable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +165,7 @@
 		CC5A19F51CEADE59007238F3 = {
 			isa = PBXGroup;
 			children = (
+				5BA72EC71DBECA48007ADBAE /* Decodable.framework */,
 				CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */,
 				CC9786C51CEBACE8005A5DEA /* Unbox.framework */,
 				CC9786C31CEBACD5005A5DEA /* Marshal.framework */,
@@ -189,6 +203,7 @@
 		CC5A1A151CEADE59007238F3 /* JSONShootoutTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */,
 				CC3023471CF9692700B51746 /* Mapper_Tests.swift */,
 				CC3023481CF9692700B51746 /* Marshal_Tests.swift */,
 				CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */,
@@ -211,10 +226,12 @@
 				71337C8C1DBEBC7900DCA374 /* Recording+Mapper.swift */,
 				71337C8E1DBEBC8600DCA374 /* Recording+Unbox.swift */,
 				71337C901DBEBCA300DCA374 /* Recording+SwiftyJSON.swift */,
+				5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */,
 				71337C921DBEBFB400DCA374 /* Program+Marshal.swift */,
 				71337C941DBEBFC300DCA374 /* Program+Mapper.swift */,
 				71337C961DBEBFD000DCA374 /* Program+Unbox.swift */,
 				71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */,
+				5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -378,6 +395,7 @@
 				CC30234B1CF9692700B51746 /* Marshal_Tests.swift in Sources */,
 				CC30234A1CF9692700B51746 /* Mapper_Tests.swift in Sources */,
 				CC30234C1CF9692700B51746 /* Unbox_Tests.swift in Sources */,
+				5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */,
 				CCD5105B1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +411,8 @@
 				71337C991DBEBFDC00DCA374 /* Program+SwiftyJSON.swift in Sources */,
 				71337C931DBEBFB400DCA374 /* Program+Marshal.swift in Sources */,
 				CC9786C01CEBAC6C005A5DEA /* NSDate+JSON.swift in Sources */,
+				5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */,
+				5B69A1DC1DBEC86A00B12579 /* Program+Decodable.swift in Sources */,
 				71337C911DBEBCA300DCA374 /* Recording+SwiftyJSON.swift in Sources */,
 				71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */,
 				71337C8B1DBEBC6B00DCA374 /* Recording+Marshal.swift in Sources */,

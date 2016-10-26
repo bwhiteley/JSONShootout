@@ -2,4 +2,4 @@ github "utahiosmac/Marshal" "master"
 github "lyft/mapper" "master"
 github "JohnSundell/Unbox" "master"
 github "SwiftyJSON/SwiftyJSON" "master"
-
+github "Anviking/Decodable" "master"
