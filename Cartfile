@@ -4,4 +4,5 @@ github "JohnSundell/Unbox" "master"
 github "SwiftyJSON/SwiftyJSON" "master"
 github "Anviking/Decodable" "master"
 github "Hearst-DD/ObjectMapper" ~> 2.2
+github "vdka/json" ~> 0.15
 

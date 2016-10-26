@@ -22,4 +22,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/Decodable/Decodable.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/json/JSON.xcodeproj">
+   </FileRef>
 </Workspace>
