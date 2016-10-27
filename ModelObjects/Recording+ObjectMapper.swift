@@ -14,6 +14,7 @@ extension Recording: ImmutableMappable {
         status = (try? map.value("Status")) ?? .Unknown
         recordId = try map.value("RecordId")
         recGroup = (try? map.value("RecGroup")) ?? .Unknown
+        //let v: UIView = try map.value("v")
     }
     public func mapping(map: Map) {
         startTsStr >>> map["StartTs"]
