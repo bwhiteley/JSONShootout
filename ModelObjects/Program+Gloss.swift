@@ -11,7 +11,6 @@ extension Program: Decodable {
 
         title       = "Title" <~~ json ?? ""
         chanId      = "channel.ChanId" <~~ json ?? ""
-        print(chanId)
         description = "Description" <~~ json
         subtitle    = "SubTitle" <~~ json
         season      = "Season" <~~ json

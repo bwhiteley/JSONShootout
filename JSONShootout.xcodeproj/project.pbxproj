@@ -122,7 +122,7 @@
 		20A0B9561DC2584D001D8A14 /* Recording+Genome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Genome.swift"; sourceTree = "<group>"; };
 		20A0B9581DC25B60001D8A14 /* Program+Genome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Genome.swift"; sourceTree = "<group>"; };
 		20A0B95A1DC25F03001D8A14 /* Genome_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genome_Test.swift; sourceTree = "<group>"; };
-		20A0B9691DC26803001D8A14 /* GenomeFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GenomeFoundation.framework; path = "../../../Library/Developer/Xcode/DerivedData/JSONShootout-abxsvmkqhktiehcjewcyfhuslfud/Build/Products/Debug-iphonesimulator/GenomeFoundation.framework"; sourceTree = "<group>"; };
+		20A0B9691DC26803001D8A14 /* GenomeFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GenomeFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Decodable.swift"; sourceTree = "<group>"; };
 		5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Decodable.swift"; sourceTree = "<group>"; };
 		5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable_Tests.swift; sourceTree = "<group>"; };

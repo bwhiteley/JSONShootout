@@ -200,7 +200,6 @@ extension Program: Decodable {
     public init?(json: JSON) {
         title       = "Title" <~~ json ?? ""
         chanId      = "channel.ChanId" <~~ json ?? ""
-        print(chanId)
         description = "Description" <~~ json
         subtitle    = "SubTitle" <~~ json
         season      = "Season" <~~ json
@@ -228,7 +227,6 @@ extension Recording: MappableObject {
 }
 
 extension Program: MappableObject {
-    
     public init(map: Map) throws {
         title = try map.extract("Title") { $0 ?? "" }
         chanId = try map.extract("channel", "ChanId") { $0 ?? "" }
@@ -238,10 +236,7 @@ extension Program: MappableObject {
         episode = try map.extract("Episode")
         recording = try Recording(node: try map.extract("Recording"))
     }
-    
-    public func sequence(_ map: Map) throws {
-    }
-    
+    public func sequence(_ map: Map) throws { }
 }
 
 // Extract an array of Programs
