@@ -246,7 +246,7 @@ extension Program: MappableObject {
 
 // Extract an array of Programs
 let json = try! data.makeNode()
-let programs: [Program] = try! [Program](node: datas["ProgramList", "Programs"]!)
+let programs: [Program] = try! [Program](node: json["ProgramList", "Programs"]!)
 ```
 
 ##Analysis
