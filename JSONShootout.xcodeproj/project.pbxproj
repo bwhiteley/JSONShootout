@@ -26,9 +26,10 @@
 		71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C941DBEBFC300DCA374 /* Program+Mapper.swift */; };
 		71337C971DBEBFD000DCA374 /* Program+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C961DBEBFD000DCA374 /* Program+Unbox.swift */; };
 		71337C991DBEBFDC00DCA374 /* Program+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */; };
-		7C3FCD2A1DC1B16100C82DEE /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCD291DC1B16100C82DEE /* Gloss.framework */; };
-		7C3FCD2E1DC1B19E00C82DEE /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */; };
-		7C3FCD2F1DC1B19E00C82DEE /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		716A8A981DC1D0E900BF314B /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716A8A971DC1D0E900BF314B /* Gloss.framework */; };
+		716A8A9A1DC1D10A00BF314B /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */; };
+		716A8A9B1DC1D10A00BF314B /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		716A8A9D1DC1D18B00BF314B /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716A8A9C1DC1D18B00BF314B /* JSON.framework */; };
 		7C3FCD311DC1B2A100C82DEE /* Program+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCD301DC1B2A100C82DEE /* Program+Gloss.swift */; };
 		7C3FCD331DC1B2AE00C82DEE /* Recording+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCD321DC1B2AE00C82DEE /* Recording+Gloss.swift */; };
 		7C3FCD351DC1B61600C82DEE /* Gloss_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCD341DC1B61600C82DEE /* Gloss_Tests.swift */; };
@@ -101,7 +102,7 @@
 				CC9786B41CEBABE7005A5DEA /* ModelObjects.framework in Embed Frameworks */,
 				CC3023421CF9616600B51746 /* Unbox.framework in Embed Frameworks */,
 				CCFD5B571D0A71990021C2B3 /* SwiftyJSON.framework in Embed Frameworks */,
-				7C3FCD2F1DC1B19E00C82DEE /* Gloss.framework in Embed Frameworks */,
+				716A8A9B1DC1D10A00BF314B /* Gloss.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,8 +126,8 @@
 		71337C941DBEBFC300DCA374 /* Program+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Mapper.swift"; sourceTree = "<group>"; };
 		71337C961DBEBFD000DCA374 /* Program+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Unbox.swift"; sourceTree = "<group>"; };
 		71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+SwiftyJSON.swift"; sourceTree = "<group>"; };
-		7C3FCD291DC1B16100C82DEE /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "Carthage/Checkouts/Gloss/build/Debug-iphoneos/Gloss.framework"; sourceTree = "<group>"; };
-		7C3FCD2B1DC1B17B00C82DEE /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "Carthage/Checkouts/Gloss/build/Debug-iphoneos/Gloss.framework"; sourceTree = "<group>"; };
+		716A8A971DC1D0E900BF314B /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		716A8A9C1DC1D18B00BF314B /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = JSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3FCD301DC1B2A100C82DEE /* Program+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Gloss.swift"; sourceTree = "<group>"; };
 		7C3FCD321DC1B2AE00C82DEE /* Recording+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Gloss.swift"; sourceTree = "<group>"; };
@@ -168,7 +169,7 @@
 			files = (
 				681299051DBFFCAB009960BE /* ObjectMapper.framework in Frameworks */,
 				CCFD5B551D0A718C0021C2B3 /* SwiftyJSON.framework in Frameworks */,
-				7C3FCD2E1DC1B19E00C82DEE /* Gloss.framework in Frameworks */,
+				716A8A9A1DC1D10A00BF314B /* Gloss.framework in Frameworks */,
 				CC7A7FB71DC053E400A69A0B /* Decodable.framework in Frameworks */,
 				CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */,
 				AA2B38CB1DC0B4AE008CECCD /* JSON.framework in Frameworks */,
@@ -190,7 +191,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C3FCD2A1DC1B16100C82DEE /* Gloss.framework in Frameworks */,
+				716A8A9D1DC1D18B00BF314B /* JSON.framework in Frameworks */,
+				716A8A981DC1D0E900BF314B /* Gloss.framework in Frameworks */,
 				CCD510591CFFFB4C00E9C0D1 /* SwiftyJSON.framework in Frameworks */,
 				CC9786C61CEBACE8005A5DEA /* Unbox.framework in Frameworks */,
 				681299061DBFFCAB009960BE /* ObjectMapper.framework in Frameworks */,
@@ -206,8 +208,8 @@
 		7C3FCD281DC1B16100C82DEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7C3FCD2B1DC1B17B00C82DEE /* Gloss.framework */,
-				7C3FCD291DC1B16100C82DEE /* Gloss.framework */,
+				716A8A9C1DC1D18B00BF314B /* JSON.framework */,
+				716A8A971DC1D0E900BF314B /* Gloss.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
