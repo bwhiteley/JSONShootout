@@ -17,7 +17,6 @@ class Gloss_Tests: XCTestCase {
         let dict: [String: Any] = try! JSONSerialization.jsonObject(with: self.data, options: []) as! [String: Any]
         
         self.measure {
-
             let programs: [Program] = "ProgramList.Programs" <~~ dict ?? []
             XCTAssert(programs.count > 1000)
         }
