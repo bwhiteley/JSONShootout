@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2098D54A1DC1F5E800A15075 /* Genome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2098D5491DC1F5E800A15075 /* Genome.framework */; };
+		2098D54B1DC1F5E800A15075 /* Genome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2098D5491DC1F5E800A15075 /* Genome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2098D54C1DC1F5FB00A15075 /* Genome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2098D5491DC1F5E800A15075 /* Genome.framework */; };
 		5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */; };
 		5B69A1DC1DBEC86A00B12579 /* Program+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */; };
 		5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */; };
@@ -95,6 +98,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CC7A7FB81DC053E400A69A0B /* Decodable.framework in Embed Frameworks */,
+				2098D54B1DC1F5E800A15075 /* Genome.framework in Embed Frameworks */,
 				681299071DBFFCBC009960BE /* ObjectMapper.framework in Embed Frameworks */,
 				CC3023441CF9616600B51746 /* Marshal.framework in Embed Frameworks */,
 				CC3023461CF9616700B51746 /* Mapper.framework in Embed Frameworks */,
@@ -110,6 +114,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2098D5491DC1F5E800A15075 /* Genome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Genome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Decodable.swift"; sourceTree = "<group>"; };
 		5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Decodable.swift"; sourceTree = "<group>"; };
 		5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable_Tests.swift; sourceTree = "<group>"; };
@@ -127,7 +132,7 @@
 		71337C961DBEBFD000DCA374 /* Program+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Unbox.swift"; sourceTree = "<group>"; };
 		71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+SwiftyJSON.swift"; sourceTree = "<group>"; };
 		716A8A971DC1D0E900BF314B /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		716A8A9C1DC1D18B00BF314B /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = JSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		716A8A9C1DC1D18B00BF314B /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3FCD301DC1B2A100C82DEE /* Program+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Gloss.swift"; sourceTree = "<group>"; };
 		7C3FCD321DC1B2AE00C82DEE /* Recording+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Gloss.swift"; sourceTree = "<group>"; };
@@ -167,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2098D54A1DC1F5E800A15075 /* Genome.framework in Frameworks */,
 				681299051DBFFCAB009960BE /* ObjectMapper.framework in Frameworks */,
 				CCFD5B551D0A718C0021C2B3 /* SwiftyJSON.framework in Frameworks */,
 				716A8A9A1DC1D10A00BF314B /* Gloss.framework in Frameworks */,
@@ -191,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2098D54C1DC1F5FB00A15075 /* Genome.framework in Frameworks */,
 				716A8A9D1DC1D18B00BF314B /* JSON.framework in Frameworks */,
 				716A8A981DC1D0E900BF314B /* Gloss.framework in Frameworks */,
 				CCD510591CFFFB4C00E9C0D1 /* SwiftyJSON.framework in Frameworks */,
@@ -217,6 +224,7 @@
 		CC5A19F51CEADE59007238F3 = {
 			isa = PBXGroup;
 			children = (
+				2098D5491DC1F5E800A15075 /* Genome.framework */,
 				7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */,
 				AA2B38CA1DC0B4AE008CECCD /* JSON.framework */,
 				5BA72EC71DBECA48007ADBAE /* Decodable.framework */,
@@ -622,6 +630,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = JSONShootout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.JSONShootout";
@@ -635,6 +644,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = JSONShootout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.JSONShootout";

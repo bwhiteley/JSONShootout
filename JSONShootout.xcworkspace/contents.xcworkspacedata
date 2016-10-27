@@ -28,4 +28,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/Gloss/Gloss.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Genome/Genome.xcodeproj">
+   </FileRef>
 </Workspace>
