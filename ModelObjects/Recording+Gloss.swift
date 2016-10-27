@@ -12,7 +12,5 @@ extension Recording: Decodable {
     self.recordId   = "RecordId" <~~ json ?? ""
     self.status     = "Status" <~~ json ?? Status.Unknown
     self.recGroup   = "RecGroup" <~~ json ?? RecGroup.Unknown
-    
-    //let v:UIView = "v" <~~ json ?? UIView()
   }
 }

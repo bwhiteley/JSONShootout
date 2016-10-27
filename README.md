@@ -257,7 +257,7 @@ Many of these projects provide a measure of type safety at compile time. The com
 
 `let name: UIView = try json.value(for: "firstName")`
 
-This code will fail to compile because `UIView` does not conform to the necessary protocol.
+This code will fail to compile because `UIView` does not conform to the necessary protocol. All of the projects in the Shootout support this compile-time safety except for ObjectMapper and Gloss.
 ##Protocol Extensions vs. Wrappers
 
 Both Unbox and Mapper work by wrapping a dictionary in another object. Marshal differs in that it is implemented as a protocol with a protocol extension. Both `NSDictionary` and `Dictionary<String, AnyObject>` conform to the protocol. Other types can easily conform to the protocol simply by providing an implementation for `optionalAny(for key: KeyType)`.
@@ -274,6 +274,9 @@ This graph shows time spent in each of the mappers as well as time spent in `NSJ
 
 
 ![Performance Graph](https://raw.githubusercontent.com/bwhiteley/JSONShootout/master/images/performance.png)
+
+###* A Note About vdka/json
+You might notice that the "JSON" bar in the graph is different from the rest. The [vdka/json](https://github.com/vdka/JSON) project uses its own pure-Swift JSON Parser instead of `NSJSONSerialization`. The author claims that for some JSON samples it outperforms `NSJSONSerialization`. This is not the case for my sample JSON. The mapping portion of vdka/JSON requires a JSON node created from the custom parser, and is not compatible with `NSJSONSerialization`.
 
 ##Conclusion
 If you are looking for a Swift JSON mapper, you might want to clone JSONShootout and compare these frameworks side-by-side yourself. 
