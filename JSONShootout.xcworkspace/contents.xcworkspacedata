@@ -25,4 +25,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/json/JSON.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Gloss/Gloss.xcodeproj">
+   </FileRef>
 </Workspace>

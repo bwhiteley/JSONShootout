@@ -26,6 +26,12 @@
 		71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C941DBEBFC300DCA374 /* Program+Mapper.swift */; };
 		71337C971DBEBFD000DCA374 /* Program+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C961DBEBFD000DCA374 /* Program+Unbox.swift */; };
 		71337C991DBEBFDC00DCA374 /* Program+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */; };
+		7C3FCD2A1DC1B16100C82DEE /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCD291DC1B16100C82DEE /* Gloss.framework */; };
+		7C3FCD2E1DC1B19E00C82DEE /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */; };
+		7C3FCD2F1DC1B19E00C82DEE /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7C3FCD311DC1B2A100C82DEE /* Program+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCD301DC1B2A100C82DEE /* Program+Gloss.swift */; };
+		7C3FCD331DC1B2AE00C82DEE /* Recording+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCD321DC1B2AE00C82DEE /* Recording+Gloss.swift */; };
+		7C3FCD351DC1B61600C82DEE /* Gloss_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCD341DC1B61600C82DEE /* Gloss_Tests.swift */; };
 		AA2B38CB1DC0B4AE008CECCD /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B38CA1DC0B4AE008CECCD /* JSON.framework */; };
 		AA2B38CC1DC0B4AE008CECCD /* JSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA2B38CA1DC0B4AE008CECCD /* JSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA2B38D01DC0B4D2008CECCD /* Program+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B38CD1DC0B4CC008CECCD /* Program+JSON.swift */; };
@@ -95,6 +101,7 @@
 				CC9786B41CEBABE7005A5DEA /* ModelObjects.framework in Embed Frameworks */,
 				CC3023421CF9616600B51746 /* Unbox.framework in Embed Frameworks */,
 				CCFD5B571D0A71990021C2B3 /* SwiftyJSON.framework in Embed Frameworks */,
+				7C3FCD2F1DC1B19E00C82DEE /* Gloss.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +125,12 @@
 		71337C941DBEBFC300DCA374 /* Program+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Mapper.swift"; sourceTree = "<group>"; };
 		71337C961DBEBFD000DCA374 /* Program+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Unbox.swift"; sourceTree = "<group>"; };
 		71337C981DBEBFDC00DCA374 /* Program+SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+SwiftyJSON.swift"; sourceTree = "<group>"; };
+		7C3FCD291DC1B16100C82DEE /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "Carthage/Checkouts/Gloss/build/Debug-iphoneos/Gloss.framework"; sourceTree = "<group>"; };
+		7C3FCD2B1DC1B17B00C82DEE /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "Carthage/Checkouts/Gloss/build/Debug-iphoneos/Gloss.framework"; sourceTree = "<group>"; };
+		7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3FCD301DC1B2A100C82DEE /* Program+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Gloss.swift"; sourceTree = "<group>"; };
+		7C3FCD321DC1B2AE00C82DEE /* Recording+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Gloss.swift"; sourceTree = "<group>"; };
+		7C3FCD341DC1B61600C82DEE /* Gloss_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gloss_Tests.swift; sourceTree = "<group>"; };
 		AA2B38CA1DC0B4AE008CECCD /* JSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2B38CD1DC0B4CC008CECCD /* Program+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Program+JSON.swift"; sourceTree = "<group>"; tabWidth = 4; };
 		AA2B38D11DC0B57F008CECCD /* Recording+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+JSON.swift"; sourceTree = "<group>"; };
@@ -155,6 +168,7 @@
 			files = (
 				681299051DBFFCAB009960BE /* ObjectMapper.framework in Frameworks */,
 				CCFD5B551D0A718C0021C2B3 /* SwiftyJSON.framework in Frameworks */,
+				7C3FCD2E1DC1B19E00C82DEE /* Gloss.framework in Frameworks */,
 				CC7A7FB71DC053E400A69A0B /* Decodable.framework in Frameworks */,
 				CC3023431CF9616600B51746 /* Marshal.framework in Frameworks */,
 				AA2B38CB1DC0B4AE008CECCD /* JSON.framework in Frameworks */,
@@ -176,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3FCD2A1DC1B16100C82DEE /* Gloss.framework in Frameworks */,
 				CCD510591CFFFB4C00E9C0D1 /* SwiftyJSON.framework in Frameworks */,
 				CC9786C61CEBACE8005A5DEA /* Unbox.framework in Frameworks */,
 				681299061DBFFCAB009960BE /* ObjectMapper.framework in Frameworks */,
@@ -188,9 +203,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C3FCD281DC1B16100C82DEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C3FCD2B1DC1B17B00C82DEE /* Gloss.framework */,
+				7C3FCD291DC1B16100C82DEE /* Gloss.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CC5A19F51CEADE59007238F3 = {
 			isa = PBXGroup;
 			children = (
+				7C3FCD2D1DC1B19E00C82DEE /* Gloss.framework */,
 				AA2B38CA1DC0B4AE008CECCD /* JSON.framework */,
 				5BA72EC71DBECA48007ADBAE /* Decodable.framework */,
 				CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */,
@@ -202,6 +227,7 @@
 				CC5A1A151CEADE59007238F3 /* JSONShootoutTests */,
 				CC97869F1CEBABE7005A5DEA /* ModelObjects */,
 				CC5A19FF1CEADE59007238F3 /* Products */,
+				7C3FCD281DC1B16100C82DEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +260,7 @@
 				5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */,
 				CC3023471CF9692700B51746 /* Mapper_Tests.swift */,
 				CC3023481CF9692700B51746 /* Marshal_Tests.swift */,
+				7C3FCD341DC1B61600C82DEE /* Gloss_Tests.swift */,
 				CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */,
 				681299171DC00DB1009960BE /* ObjectMapper_Test.swift */,
 				CC3023491CF9692700B51746 /* Unbox_Tests.swift */,
@@ -259,6 +286,7 @@
 				5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */,
 				6812991A1DC00DBB009960BE /* Recording+ObjectMapper.swift */,
 				AA2B38D11DC0B57F008CECCD /* Recording+JSON.swift */,
+				7C3FCD321DC1B2AE00C82DEE /* Recording+Gloss.swift */,
 				71337C921DBEBFB400DCA374 /* Program+Marshal.swift */,
 				71337C941DBEBFC300DCA374 /* Program+Mapper.swift */,
 				71337C961DBEBFD000DCA374 /* Program+Unbox.swift */,
@@ -266,6 +294,7 @@
 				5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */,
 				681299191DC00DBB009960BE /* Program+ObjectMapper.swift */,
 				AA2B38CD1DC0B4CC008CECCD /* Program+JSON.swift */,
+				7C3FCD301DC1B2A100C82DEE /* Program+Gloss.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -432,6 +461,7 @@
 				AA2B38D41DC0B6D3008CECCD /* JSON_Tests.swift in Sources */,
 				5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */,
 				CCD5105B1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift in Sources */,
+				7C3FCD351DC1B61600C82DEE /* Gloss_Tests.swift in Sources */,
 				681299181DC00DB1009960BE /* ObjectMapper_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +481,9 @@
 				CC9786C01CEBAC6C005A5DEA /* NSDate+JSON.swift in Sources */,
 				5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */,
 				AA2B38D01DC0B4D2008CECCD /* Program+JSON.swift in Sources */,
+				7C3FCD311DC1B2A100C82DEE /* Program+Gloss.swift in Sources */,
 				5B69A1DC1DBEC86A00B12579 /* Program+Decodable.swift in Sources */,
+				7C3FCD331DC1B2AE00C82DEE /* Recording+Gloss.swift in Sources */,
 				AA2B38D21DC0B57F008CECCD /* Recording+JSON.swift in Sources */,
 				71337C911DBEBCA300DCA374 /* Recording+SwiftyJSON.swift in Sources */,
 				71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */,
