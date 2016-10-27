@@ -25,7 +25,12 @@ extension Program: MappableObject {
     }
     
     public func sequence(_ map: Map) throws {
-        
+        try title ~> map["Title"]
+        try chanId ~> map["channel", "ChanId"]
+        try description ~> map["Description"]
+        try season ~> map["Season"]
+        try episode ~> map["Episode"]
+        try recording ~> map["Recording"]
     }
     
 }

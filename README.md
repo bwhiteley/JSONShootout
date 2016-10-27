@@ -8,6 +8,8 @@ Many projects have emerged to take on this challenge, employing various approach
 * [Unbox](https://github.com/JohnSundell/Unbox)
 * [Decodable](https://github.com/Anviking/Decodable)
 * [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
+* [Gloss](https://github.com/hkellaway/Gloss)
+* [Genome](https://github.com/LoganWright/Genome)
 
 The power of the approach taken by these projects lies in the ability to easily map not only primitive JSON types, but also custom types and objects in a type safe manner.
 
@@ -181,6 +183,70 @@ extension Program: Decodable {
 // Extract an array of Programs
 let dict = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
 let programs:[Program] = try! dict => "ProgramList" => "Programs"
+```
+
+### Gloss
+```swift
+extension Recording: Decodable {
+  public init?(json: JSON) {
+    self.startTsStr = "StartTs" <~~ json ?? ""
+    self.recordId   = "RecordId" <~~ json ?? ""
+    self.status     = "Status" <~~ json ?? Status.Unknown
+    self.recGroup   = "RecGroup" <~~ json ?? RecGroup.Unknown
+  }
+}
+
+extension Program: Decodable {
+    public init?(json: JSON) {
+        title       = "Title" <~~ json ?? ""
+        chanId      = "channel.ChanId" <~~ json ?? ""
+        print(chanId)
+        description = "Description" <~~ json
+        subtitle    = "SubTitle" <~~ json
+        season      = "Season" <~~ json
+        episode     = "Episode" <~~ json
+        recording   = ("Recording" <~~ json)!
+    }
+}
+
+// Extract an array of Programs
+let dict: [String: Any] = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+let programs: [Program] = "ProgramList.Programs" <~~ dict ?? []
+```
+
+### Genome
+
+```swift
+extension Recording: MappableObject {
+    public init(map: Map) throws {
+        startTsStr = try map.extract("StartTs")
+        status = try map.extract("Status") { Status(rawValue: $0) ?? .Unknown }
+        recordId = try map.extract("RecordId")
+        recGroup = try map.extract("RecGroup") { RecGroup(rawValue: $0) ?? .Unknown }
+    }
+    public func sequence(_ map: Map) throws { }
+}
+
+extension Program: MappableObject {
+    
+    public init(map: Map) throws {
+        title = try map.extract("Title") { $0 ?? "" }
+        chanId = try map.extract("channel", "ChanId") { $0 ?? "" }
+        description = try map.extract("Description")
+        subtitle = try map.extract("SubTitle")
+        season = try map.extract("Season")
+        episode = try map.extract("Episode")
+        recording = try Recording(node: try map.extract("Recording"))
+    }
+    
+    public func sequence(_ map: Map) throws {
+    }
+    
+}
+
+// Extract an array of Programs
+let json = try! data.makeNode()
+let programs: [Program] = try! [Program](node: datas["ProgramList", "Programs"]!)
 ```
 
 ##Analysis

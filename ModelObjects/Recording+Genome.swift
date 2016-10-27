@@ -18,6 +18,7 @@ extension Recording: MappableObject {
     }
     
     public func sequence(_ map: Map) throws {
+        // demo for transform object to dictionary
         try startTsStr ~> map["StartTs"]
         try status ~> map["Status"].transformToNode { $0.rawValue }
         try recordId ~> map["RecordId"]
