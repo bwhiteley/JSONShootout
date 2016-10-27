@@ -1,4 +1,5 @@
 github "Anviking/Decodable" "5cbd5cf2a13376e11f8c8808c437c7e8f9e45e27"
+github "LoganWright/Genome" "3.0.3"
 github "hkellaway/Gloss" "731d09219477c1765505473af6d5152dc968d778"
 github "utahiosmac/Marshal" "5dac3b70996bbba099709528f183512ad01c7f55"
 github "Hearst-DD/ObjectMapper" "2.2.0"
