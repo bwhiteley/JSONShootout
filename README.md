@@ -1,5 +1,5 @@
 # Swift + JSON
-Since the first days of Swift, developers have been exploring strategies for dealing with JSON. While some call this "JSON Parsing", with few exceptions most people rely on `NSJSONSerialization` for the actual parsing. Most of the effort has gone into finding the best way to map JSON objects (dictionaries and arrays) into model objects (structs, classes, enums).
+Since the first days of Swift, developers have been exploring strategies for dealing with JSON. While some call this "JSON Parsing", with few [exceptions](https://github.com/vdka/JSON) most people rely on `NSJSONSerialization` for the actual parsing. Most of the effort has gone into finding the best way to map JSON objects (dictionaries and arrays) into model objects (structs, classes, enums).
 ## A Convergence of Ideas
 Many projects have emerged to take on this challenge, employing various approaches and philosophies. It's interesting that several of these projects have taken a very similar approach, ostensibly independent of each other. Here are some examples:
 
@@ -37,7 +37,7 @@ struct Recording {
     let recGroup:RecGroup // enum
 }
 
-public struct Program {
+struct Program {
     let title:String
     let chanId:String
     let startTime:NSDate
@@ -245,12 +245,12 @@ let programs: [Program] = try! [Program](node: json["ProgramList", "Programs"]!)
 ```
 
 ##Analysis
-You can immediately see the similarities between the three projects. I won't get into the details of how they work here. You can read more about each project, or read Jason Larson's 
+You can immediately see the similarities between the three projects. I won't get into the details of how they work here. You can read more about each project, or read Jason Larsen's 
 [three](http://jasonlarsen.me/2015/06/23/no-magic-json.html) 
 [blog](http://jasonlarsen.me/2015/06/23/no-magic-json-pt2.html) 
 [posts](http://jasonlarsen.me/2015/10/16/no-magic-json-pt3.html).
 
-All three of the JSON mappers can handle `NSURL`s. They can also handle `NSDate`s with the help of formatters. Marshal and Mapper automatically handle enums with raw types. Unbox requires enums to conform to a special protocol. The power of these projects lies in the ability to make the JSON mapper aware of new types, whether they be simple fields that can be transformed from a string such as dates, or more complex types and even nested types like our Program and Recording above. 
+Most of these JSON mappers can handle `NSURL`s. They can also handle `NSDate`s with the help of formatters. Marshal and Mapper automatically handle enums with raw types. Unbox requires enums to conform to a special protocol. The power of these projects lies in the ability to make the JSON mapper aware of new types, whether they be simple fields that can be transformed from a string such as dates, or more complex types and even nested types like our Program and Recording above. 
 ##Type Safety
 
 Many of these projects provide a measure of type safety at compile time. The compiler is aware of what types are supported, so you can't attempt to extract a type that the JSON extractor can't handle. For example, the compiler won't let you try this:
@@ -260,7 +260,7 @@ Many of these projects provide a measure of type safety at compile time. The com
 This code will fail to compile because `UIView` does not conform to the necessary protocol. All of the projects in the Shootout support this compile-time safety except for ObjectMapper and Gloss.
 ##Protocol Extensions vs. Wrappers
 
-Both Unbox and Mapper work by wrapping a dictionary in another object. Marshal differs in that it is implemented as a protocol with a protocol extension. Both `NSDictionary` and `Dictionary<String, AnyObject>` conform to the protocol. Other types can easily conform to the protocol simply by providing an implementation for `optionalAny(for key: KeyType)`.
+Many of these frameworks work by wrapping a dictionary in another object. Marshal differs in that it is implemented as a protocol with a protocol extension. Both `NSDictionary` and `Dictionary<String, Any>` conform to the protocol. Other types can easily conform to the protocol simply by providing an implementation for `optionalAny(for key: KeyType)`.
 ##What about SwiftyJSON?
 
 SwiftyJSON was one of the earliest projects to help Swift developers deal with JSON. Compared to more recent projects, SwiftyJSON is verbose and error prone. It doesn't take advantage of Swift's type system to enable safety, error handling, and expressive code. As you'll see below, the performance is quite bad as well.
@@ -277,6 +277,9 @@ This graph shows time spent in each of the mappers as well as time spent in `NSJ
 
 ###* A Note About vdka/json
 You might notice that the "JSON" bar in the graph is different from the rest. The [vdka/json](https://github.com/vdka/JSON) project uses its own pure-Swift JSON Parser instead of `NSJSONSerialization`. The author claims that for some JSON samples it outperforms `NSJSONSerialization`. This is not the case for my sample JSON. The mapping portion of vdka/JSON requires a JSON node created from the custom parser, and is not compatible with `NSJSONSerialization`.
+
+##That Thing on the Swift Blog
+There was a Swift blog post about [working with JSON in Swift](https://developer.apple.com/swift/blog/?id=37). The concluding section seems to discourage the use of a JSON framework and instead use the features available in the Swift language itself. However, the post is referring specifically to abstractions that use reflection to automatically map between dictionaries and model objects. None of the frameworks evaluated here do that, but instead favor explicitness. The error handling example from the Swift blog post demonstrates why using a `guard let` approach to JSON is a bad idea for any significant amount of JSON processing. It is very verbose, repetitive, and error prone. The frameworks evaluated here provide a concise and declarative way to work with JSON while avoiding "magic."
 
 ##Conclusion
 If you are looking for a Swift JSON mapper, you might want to clone JSONShootout and compare these frameworks side-by-side yourself. 
