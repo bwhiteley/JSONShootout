@@ -1,6 +1,9 @@
 # Swift + JSON
 Since the first days of Swift, developers have been exploring strategies for dealing with JSON. While some call this "JSON Parsing", with few [exceptions](https://github.com/vdka/JSON) most people rely on `NSJSONSerialization` for the actual parsing. Most of the effort has gone into finding the best way to map JSON objects (dictionaries and arrays) into model objects (structs, classes, enums).
+
 ## A Convergence of Ideas
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;I believe there&#39;s a JSON platonic ideal and all Swift implementations converge towards it&quot;</p>&mdash; ericasadun (@ericasadun) <a href="https://twitter.com/ericasadun/status/770769972549169152">August 30, 2016</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 Many projects have emerged to take on this challenge, employing various approaches and philosophies. It's interesting that several of these projects have taken a very similar approach, ostensibly independent of each other. Here are some examples:
 
 * [Marshal](https://github.com/utahiosmac/Marshal)
