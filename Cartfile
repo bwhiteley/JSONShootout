@@ -7,3 +7,4 @@ github "Hearst-DD/ObjectMapper" ~> 2.2
 github "vdka/json" ~> 0.15
 github "hkellaway/Gloss" "master"
 github "LoganWright/Genome" == 3.0.3
+github "postmates/PMJSON" "master"
