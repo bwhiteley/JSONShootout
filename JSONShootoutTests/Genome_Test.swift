@@ -26,8 +26,22 @@ class Genome_Test: XCTestCase {
         }
     }
     
+    func testPerformance2() {
+        let json = try! self.usersData.makeNode()
+        self.measure {
+            let users: [User] = try! [User](node: json)
+            XCTAssert(users.count > 100)
+        }
+    }
+    
     private lazy var data:Data = {
         let path = Bundle(for: type(of: self)).url(forResource: "Large", withExtension: "json")
+        let data = try! Data(contentsOf: path!)
+        return data
+    }()
+    
+    private lazy var usersData:Data = {
+        let path = Bundle(for: type(of: self)).url(forResource: "Users", withExtension: "json")
         let data = try! Data(contentsOf: path!)
         return data
     }()
