@@ -7,16 +7,17 @@
 //
 
 import Unbox
+import KeyedMapper
 
 public struct Recording {
-    enum Status: String, UnboxableEnum {
+    enum Status: String, UnboxableEnum, DefaultConvertible {
         case None = "0"
         case Recorded = "-3"
         case Recording = "-2"
         case Unknown
     }
     
-    enum RecGroup: String, UnboxableEnum {
+    enum RecGroup: String, UnboxableEnum, DefaultConvertible {
         case Deleted = "Deleted"
         case Default = "Default"
         case LiveTV = "LiveTV"

@@ -13,6 +13,7 @@ Many projects have emerged to take on this challenge, employing various approach
 * [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
 * [Gloss](https://github.com/hkellaway/Gloss)
 * [Genome](https://github.com/LoganWright/Genome)
+* [KeyedMapper](https://github.com/Noobish1/KeyedMapper)
 
 The power of the approach taken by these projects lies in the ability to easily map not only primitive JSON types, but also custom types and objects in a type safe manner.
 
@@ -245,6 +246,53 @@ extension Program: MappableObject {
 // Extract an array of Programs
 let json = try! data.makeNode()
 let programs: [Program] = try! [Program](node: json["ProgramList", "Programs"]!)
+```
+
+### KeyedMapper
+
+```swift
+extension Recording: Mappable {
+    public enum Key: String, JSONKey {
+        case StartTs
+        case EndTs
+        case RecordId
+        case Status
+        case RecGroup
+    }
+
+    public init(map: KeyedMapper<Recording>) throws {
+        startTs =  map.optionalFrom(.StartTs)
+        endTs =  map.optionalFrom(.EndTs)
+        startTsStr = try map.from(.StartTs)
+        recordId = try map.from(.RecordId)
+        status = map.optionalFrom(.Status) ?? .Unknown
+        recGroup = map.optionalFrom(.RecGroup) ?? .Unknown
+    }
+}
+
+extension Program: Mappable {
+    public enum Key: String, JSONKey {
+        case Title
+        case ChannelID = "Channel.ChanId"
+        case Description
+        case SubTitle
+        case Recording
+        case Season
+        case Episode
+        case ProgramList = "ProgramList.Programs"
+    }
+
+    public init(map: KeyedMapper<Program>) throws {
+        title = try map.from(.Title)
+        chanId = try map.from(.ChannelID)
+        description = map.optionalFrom(.Description)
+        subtitle = map.optionalFrom(.SubTitle)
+        recording = try map.from(.Recording)
+        season = map.optionalFrom(.Season, transformation: { Int($0 as! String)! })
+        episode = map.optionalFrom(.Episode, transformation: { Int($0 as! String)! })
+    }
+}
+
 ```
 
 ##Analysis

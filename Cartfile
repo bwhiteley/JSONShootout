@@ -8,3 +8,4 @@ github "vdka/json" ~> 0.15
 github "hkellaway/Gloss" "master"
 github "LoganWright/Genome" == 3.0.3
 github "postmates/PMJSON" "master"
+github "Noobish1/KeyedMapper" == 1.9.0
