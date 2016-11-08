@@ -12,13 +12,6 @@ import Mapper
 
 class Mapper_Tests: XCTestCase {
 
-    func testDeserialization() {
-        self.measure {
-            let d:NSDictionary = try! JSONSerialization.jsonObject(with:self.data, options: []) as! NSDictionary
-            XCTAssert(d.count > 0)
-        }
-    }
-    
     func testPerformance() {
         
         let dict = try! JSONSerialization.jsonObject(with: self.data as Data, options: []) as! NSDictionary
