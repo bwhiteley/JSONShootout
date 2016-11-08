@@ -15,6 +15,7 @@
 		20A0B95B1DC25F03001D8A14 /* Genome_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A0B95A1DC25F03001D8A14 /* Genome_Test.swift */; };
 		20A0B96B1DC26810001D8A14 /* GenomeFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A0B9691DC26803001D8A14 /* GenomeFoundation.framework */; };
 		20BB48341DD223FC00B72AE5 /* User+Genome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB48331DD223FC00B72AE5 /* User+Genome.swift */; };
+		20BB48361DD232D100B72AE5 /* User+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB48351DD232D100B72AE5 /* User+Gloss.swift */; };
 		5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */; };
 		5B69A1DC1DBEC86A00B12579 /* Program+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */; };
 		5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */; };
@@ -134,6 +135,7 @@
 		20A0B95A1DC25F03001D8A14 /* Genome_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genome_Test.swift; sourceTree = "<group>"; };
 		20A0B9691DC26803001D8A14 /* GenomeFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GenomeFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BB48331DD223FC00B72AE5 /* User+Genome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Genome.swift"; sourceTree = "<group>"; };
+		20BB48351DD232D100B72AE5 /* User+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Gloss.swift"; sourceTree = "<group>"; };
 		5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Decodable.swift"; sourceTree = "<group>"; };
 		5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Decodable.swift"; sourceTree = "<group>"; };
 		5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable_Tests.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				5DA29ACD1DC733D800345728 /* User+JSON.swift */,
 				5DA29ACF1DC7347100345728 /* User+Marshal.swift */,
 				20BB48331DD223FC00B72AE5 /* User+Genome.swift */,
+				20BB48351DD232D100B72AE5 /* User+Gloss.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				20A0B9571DC2584D001D8A14 /* Recording+Genome.swift in Sources */,
 				71337C951DBEBFC300DCA374 /* Program+Mapper.swift in Sources */,
 				71337C8B1DBEBC6B00DCA374 /* Recording+Marshal.swift in Sources */,
+				20BB48361DD232D100B72AE5 /* User+Gloss.swift in Sources */,
 				20A0B9591DC25B60001D8A14 /* Program+Genome.swift in Sources */,
 				CC9786BC1CEBAC14005A5DEA /* Recording.swift in Sources */,
 			);

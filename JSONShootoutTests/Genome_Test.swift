@@ -22,7 +22,6 @@ class Genome_Test: XCTestCase {
             }
             let programs: [Program] = try! [Program](node: datas)
             XCTAssert(programs.count > 1000)
-            
         }
     }
     
