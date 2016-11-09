@@ -22,10 +22,24 @@ class Gloss_Tests: XCTestCase {
         }
     }
     
+    func testPerformance2() {
+        let dict: [[String: Any]] = try! JSONSerialization.jsonObject(with: self.usersData, options: []) as! [[String: Any]]
+        
+        self.measure {
+            let users: [User] = [User].from(jsonArray: dict) ?? []
+            XCTAssert(users.count > 100)
+        }
+    }
+    
     private lazy var data:Data = {
         let path = Bundle(for: type(of: self)).url(forResource: "Large", withExtension: "json")
         let data = try! Data(contentsOf: path!)
         return data
     }()
-
+    
+    private lazy var usersData:Data = {
+        let path = Bundle(for: type(of: self)).url(forResource: "Users", withExtension: "json")
+        let data = try! Data(contentsOf: path!)
+        return data
+    }()
 }

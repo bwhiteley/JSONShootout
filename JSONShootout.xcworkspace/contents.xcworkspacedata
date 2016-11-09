@@ -31,4 +31,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/Genome/Genome.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/PMJSON/PMJSON.xcodeproj">
+   </FileRef>
 </Workspace>

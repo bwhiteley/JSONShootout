@@ -12,13 +12,6 @@ import Mapper
 
 class Mapper_Tests: XCTestCase {
 
-    func testDeserialization() {
-        self.measure {
-            let d:NSDictionary = try! JSONSerialization.jsonObject(with:self.data, options: []) as! NSDictionary
-            XCTAssert(d.count > 0)
-        }
-    }
-    
     func testPerformance() {
         
         let dict = try! JSONSerialization.jsonObject(with: self.data as Data, options: []) as! NSDictionary
@@ -30,10 +23,24 @@ class Mapper_Tests: XCTestCase {
         }
     }
     
+    func testPerformance2() {
+        let dict: NSArray = try! JSONSerialization.jsonObject(with: self.usersData as Data, options: []) as! NSArray
+        self.measure {
+            let users: [User] = User.from(dict)!
+            XCTAssert(users.count > 100)
+        }
+    }
+    
     private lazy var data:Data = {
         let path = Bundle(for: type(of: self)).url(forResource: "Large", withExtension: "json")!
         let data = try! Data(contentsOf: path)
         return data
     }()
 
+    private lazy var usersData:Data = {
+        let path = Bundle(for: type(of: self)).url(forResource: "Users", withExtension: "json")
+        let data = try! Data(contentsOf: path!)
+        return data
+    }()
+    
 }
