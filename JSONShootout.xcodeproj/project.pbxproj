@@ -14,6 +14,12 @@
 		20A0B9591DC25B60001D8A14 /* Program+Genome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A0B9581DC25B60001D8A14 /* Program+Genome.swift */; };
 		20A0B95B1DC25F03001D8A14 /* Genome_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A0B95A1DC25F03001D8A14 /* Genome_Test.swift */; };
 		20A0B96B1DC26810001D8A14 /* GenomeFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A0B9691DC26803001D8A14 /* GenomeFoundation.framework */; };
+		2F2868961DE7F34B002A6F68 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2868951DE7F34B002A6F68 /* Freddy.framework */; };
+		2F2868981DE7F48A002A6F68 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2868971DE7F48A002A6F68 /* Freddy.framework */; };
+		2F28689A1DE7F502002A6F68 /* Freddy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2868971DE7F48A002A6F68 /* Freddy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F28689C1DE7F66F002A6F68 /* Freddy_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28689B1DE7F66F002A6F68 /* Freddy_Tests.swift */; };
+		2F28689E1DE7FB58002A6F68 /* Program+Freddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28689D1DE7FB58002A6F68 /* Program+Freddy.swift */; };
+		2F2868A01DE8843C002A6F68 /* Recording+Freddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28689F1DE8843C002A6F68 /* Recording+Freddy.swift */; };
 		5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */; };
 		5B69A1DC1DBEC86A00B12579 /* Program+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */; };
 		5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */; };
@@ -116,6 +122,7 @@
 				CC3023421CF9616600B51746 /* Unbox.framework in Embed Frameworks */,
 				CCFD5B571D0A71990021C2B3 /* SwiftyJSON.framework in Embed Frameworks */,
 				716A8A9B1DC1D10A00BF314B /* Gloss.framework in Embed Frameworks */,
+				2F28689A1DE7F502002A6F68 /* Freddy.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +135,11 @@
 		20A0B9581DC25B60001D8A14 /* Program+Genome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Genome.swift"; sourceTree = "<group>"; };
 		20A0B95A1DC25F03001D8A14 /* Genome_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genome_Test.swift; sourceTree = "<group>"; };
 		20A0B9691DC26803001D8A14 /* GenomeFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GenomeFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F2868951DE7F34B002A6F68 /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Freddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F2868971DE7F48A002A6F68 /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Freddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F28689B1DE7F66F002A6F68 /* Freddy_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Freddy_Tests.swift; sourceTree = "<group>"; };
+		2F28689D1DE7FB58002A6F68 /* Program+Freddy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Freddy.swift"; sourceTree = "<group>"; };
+		2F28689F1DE8843C002A6F68 /* Recording+Freddy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Freddy.swift"; sourceTree = "<group>"; };
 		5B69A1D91DBEC84200B12579 /* Recording+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Decodable.swift"; sourceTree = "<group>"; };
 		5B69A1DB1DBEC86A00B12579 /* Program+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Decodable.swift"; sourceTree = "<group>"; };
 		5B69A1DD1DBEC9A400B12579 /* Decodable_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable_Tests.swift; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2868981DE7F48A002A6F68 /* Freddy.framework in Frameworks */,
 				20A0B96B1DC26810001D8A14 /* GenomeFoundation.framework in Frameworks */,
 				2098D54A1DC1F5E800A15075 /* Genome.framework in Frameworks */,
 				681299051DBFFCAB009960BE /* ObjectMapper.framework in Frameworks */,
@@ -217,6 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2868961DE7F34B002A6F68 /* Freddy.framework in Frameworks */,
 				2098D54C1DC1F5FB00A15075 /* Genome.framework in Frameworks */,
 				716A8A9D1DC1D18B00BF314B /* JSON.framework in Frameworks */,
 				716A8A981DC1D0E900BF314B /* Gloss.framework in Frameworks */,
@@ -236,6 +250,8 @@
 		7C3FCD281DC1B16100C82DEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F2868971DE7F48A002A6F68 /* Freddy.framework */,
+				2F2868951DE7F34B002A6F68 /* Freddy.framework */,
 				9E9BF9C91DCD117300548161 /* PMJSON.framework */,
 				9E9BF9C71DCD116900548161 /* PMJSON.framework */,
 				2098D5491DC1F5E800A15075 /* Genome.framework */,
@@ -301,6 +317,7 @@
 				CC3023491CF9692700B51746 /* Unbox_Tests.swift */,
 				AA2B38D31DC0B6D3008CECCD /* JSON_Tests.swift */,
 				9E9BF9CB1DCD11BA00548161 /* PMJSON_Tests.swift */,
+				2F28689B1DE7F66F002A6F68 /* Freddy_Tests.swift */,
 				CC5A1A4C1CEAE182007238F3 /* Large.json */,
 				CC5A1A181CEADE59007238F3 /* Info.plist */,
 			);
@@ -325,6 +342,7 @@
 				7C3FCD321DC1B2AE00C82DEE /* Recording+Gloss.swift */,
 				20A0B9561DC2584D001D8A14 /* Recording+Genome.swift */,
 				9E9BF9CF1DCD307200548161 /* Recording+PMJSON.swift */,
+				2F28689F1DE8843C002A6F68 /* Recording+Freddy.swift */,
 				71337C921DBEBFB400DCA374 /* Program+Marshal.swift */,
 				71337C941DBEBFC300DCA374 /* Program+Mapper.swift */,
 				71337C961DBEBFD000DCA374 /* Program+Unbox.swift */,
@@ -335,6 +353,7 @@
 				7C3FCD301DC1B2A100C82DEE /* Program+Gloss.swift */,
 				20A0B9581DC25B60001D8A14 /* Program+Genome.swift */,
 				9E9BF9CD1DCD126D00548161 /* Program+PMJSON.swift */,
+				2F28689D1DE7FB58002A6F68 /* Program+Freddy.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -500,6 +519,7 @@
 				CC30234A1CF9692700B51746 /* Mapper_Tests.swift in Sources */,
 				CC30234C1CF9692700B51746 /* Unbox_Tests.swift in Sources */,
 				AA2B38D41DC0B6D3008CECCD /* JSON_Tests.swift in Sources */,
+				2F28689C1DE7F66F002A6F68 /* Freddy_Tests.swift in Sources */,
 				5B69A1DE1DBEC9A400B12579 /* Decodable_Tests.swift in Sources */,
 				CCD5105B1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift in Sources */,
 				7C3FCD351DC1B61600C82DEE /* Gloss_Tests.swift in Sources */,
@@ -512,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2868A01DE8843C002A6F68 /* Recording+Freddy.swift in Sources */,
 				71337C8F1DBEBC8600DCA374 /* Recording+Unbox.swift in Sources */,
 				6812991C1DC00DBB009960BE /* Recording+ObjectMapper.swift in Sources */,
 				71337C971DBEBFD000DCA374 /* Program+Unbox.swift in Sources */,
@@ -520,6 +541,7 @@
 				6812991B1DC00DBB009960BE /* Program+ObjectMapper.swift in Sources */,
 				9E9BF9D01DCD307200548161 /* Recording+PMJSON.swift in Sources */,
 				71337C991DBEBFDC00DCA374 /* Program+SwiftyJSON.swift in Sources */,
+				2F28689E1DE7FB58002A6F68 /* Program+Freddy.swift in Sources */,
 				71337C931DBEBFB400DCA374 /* Program+Marshal.swift in Sources */,
 				CC9786C01CEBAC6C005A5DEA /* NSDate+JSON.swift in Sources */,
 				9E9BF9CE1DCD126D00548161 /* Program+PMJSON.swift in Sources */,
