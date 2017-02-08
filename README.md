@@ -1,5 +1,5 @@
 # Swift + JSON
-Since the first days of Swift, developers have been exploring strategies for dealing with JSON. While some call this "JSON Parsing", with few [exceptions](https://github.com/vdka/JSON) most people rely on `NSJSONSerialization` for the actual parsing. Most of the effort has gone into finding the best way to map JSON objects (dictionaries and arrays) into model objects (structs, classes, enums).
+Since the first days of Swift, developers have been exploring strategies for dealing with JSON. While some call this "JSON Parsing", with [few](https://github.com/bignerdranch/Freddy) [exceptions](https://github.com/vdka/JSON) most people rely on `NSJSONSerialization` for the actual parsing. Most of the effort has gone into finding the best way to map JSON objects (dictionaries and arrays) into model objects (structs, classes, enums).
 
 ## A Convergence of Ideas
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;I believe there&#39;s a JSON platonic ideal and all Swift implementations converge towards it&quot;</p>&mdash; (quoted on Twitter, original author unknown) </blockquote>
@@ -278,8 +278,8 @@ This graph shows time spent in each of the mappers as well as time spent in `NSJ
 
 ![Performance Graph](https://raw.githubusercontent.com/bwhiteley/JSONShootout/master/images/performance.png)
 
-###* A Note About vdka/json
-You might notice that the "JSON" bar in the graph is different from the rest. The [vdka/json](https://github.com/vdka/JSON) project uses its own pure-Swift JSON Parser instead of `NSJSONSerialization`. The author claims that for some JSON samples it outperforms `NSJSONSerialization`. This is not the case for my sample JSON. The mapping portion of vdka/JSON requires a JSON node created from the custom parser, and is not compatible with `NSJSONSerialization`.
+###* A Note About vdka/json and Freddy
+You might notice that the "JSON" and "Freddy" bars in the graph are different from the rest. These projects use their own JSON deserializers instead of `NSJSONSerialization`. 
 
 ##That Thing on the Swift Blog
 There was a Swift blog post about [working with JSON in Swift](https://developer.apple.com/swift/blog/?id=37). The concluding section seems to discourage the use of a JSON framework and instead use the features available in the Swift language itself. However, the post is referring specifically to abstractions that use reflection to automatically map between dictionaries and model objects. None of the frameworks evaluated here do that, but instead favor explicitness. The error handling example from the Swift blog post demonstrates why using a `guard let` approach to JSON is a bad idea for any significant amount of JSON processing. It is very verbose, repetitive, and error prone. The frameworks evaluated here provide a concise and declarative way to work with JSON while avoiding "magic."

@@ -34,4 +34,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/PMJSON/PMJSON.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Freddy/Freddy.xcodeproj">
+   </FileRef>
 </Workspace>
