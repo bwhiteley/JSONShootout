@@ -9,3 +9,4 @@ github "hkellaway/Gloss" "master"
 github "LoganWright/Genome" == 3.0.3
 github "postmates/PMJSON" "master"
 github "bignerdranch/Freddy" ~> 3.0
+
