@@ -54,7 +54,7 @@ struct Program {
 ```
 
 Now let's look at how these objects would be extracted with each of the JSON mappers. We'll ignore proper error handling for this exercise. 
-###Marshal
+### Marshal
 ```swift
 extension Recording: Unmarshaling {
     public init(object json:MarshaledObject) throws {
@@ -86,7 +86,7 @@ let json = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! NS
 let programs:[Program] = try json.valueForKey("ProgramList.Programs")
 ```
 
-###Mapper
+### Mapper
 
 ```swift
 extension Recording: Mappable {
@@ -120,7 +120,7 @@ let mapper = Mapper(JSON: dict)
 let programs:[Program] = try! mapper.from("ProgramList.Programs")
 ```
 
-###Unbox
+### Unbox
 
 ```swift
 extension Recording: Unboxable {
@@ -153,7 +153,7 @@ let dict = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! Un
 let programs:[Program] = try! unbox(dictionary: dict, atKeyPath: "ProgramList.Programs")
 ```
 
-###Decodable
+### Decodable
 
 ```swift
 extension Recording : Decodable {
@@ -247,30 +247,30 @@ let json = try! data.makeNode()
 let programs: [Program] = try! [Program](node: json["ProgramList", "Programs"]!)
 ```
 
-##Analysis
+## Analysis
 You can immediately see the similarities between the three projects. I won't get into the details of how they work here. You can read more about each project, or read Jason Larsen's 
 [three](http://jasonlarsen.me/2015/06/23/no-magic-json.html) 
 [blog](http://jasonlarsen.me/2015/06/23/no-magic-json-pt2.html) 
 [posts](http://jasonlarsen.me/2015/10/16/no-magic-json-pt3.html).
 
 Most of these JSON mappers can handle `NSURL`s. They can also handle `NSDate`s with the help of formatters. Marshal and Mapper automatically handle enums with raw types. Unbox requires enums to conform to a special protocol. The power of these projects lies in the ability to make the JSON mapper aware of new types, whether they be simple fields that can be transformed from a string such as dates, or more complex types and even nested types like our Program and Recording above. 
-##Type Safety
+## Type Safety
 
 Many of these projects provide a measure of type safety at compile time. The compiler is aware of what types are supported, so you can't attempt to extract a type that the JSON extractor can't handle. For example, the compiler won't let you try this:
 
 `let name: UIView = try json.value(for: "firstName")`
 
 This code will fail to compile because `UIView` does not conform to the necessary protocol. All of the projects in the Shootout support this compile-time safety except for ObjectMapper and Gloss.
-##Protocol Extensions vs. Wrappers
+## Protocol Extensions vs. Wrappers
 
 Many of these frameworks work by wrapping a dictionary in another object. Marshal differs in that it is implemented as a protocol with a protocol extension. Both `NSDictionary` and `Dictionary<String, Any>` conform to the protocol. Other types can easily conform to the protocol simply by providing an implementation for `optionalAny(for key: KeyType)`.
-##What about SwiftyJSON?
+## What about SwiftyJSON?
 
 SwiftyJSON was one of the earliest projects to help Swift developers deal with JSON. Compared to more recent projects, SwiftyJSON is verbose and error prone. It doesn't take advantage of Swift's type system to enable safety, error handling, and expressive code. As you'll see below, the performance is quite bad as well.
-##What about Argo?
+## What about Argo?
 
 Argo requires two additional dependencies (Curry and Runes) which feels kind of heavy. The liberal use of custom operators is off-putting to many developers. When trying to map to the two model objects above with Argo, the Swift compiler emitted the dreaded error `Expression was too complex to be solved in reasonable time`. As a result Argo is more rigid and the model objects had to be changed to get things to work. Argo was the worst-performing framework tested. Because the model objects had to be changed to get Argo to work, the master branch does not have support for Argo. A separate `argo` branch is available if someone would like to see how it works.
-##Performance
+## Performance
 Now that we have all of the JSON mappers processing the same JSON file, we can compare the performance of each. While measuring performance I noticed that a lot of time was spent in date parsing. Since this was common across all implementations, I removed the dates from the model objects to get a better comparison of the performance of the JSON mappers themselves.
 
 This graph shows time spent in each of the mappers as well as time spent in `NSJSONSerialization` for a reference.
@@ -278,13 +278,13 @@ This graph shows time spent in each of the mappers as well as time spent in `NSJ
 
 ![Performance Graph](https://raw.githubusercontent.com/bwhiteley/JSONShootout/master/images/performance.png)
 
-###* A Note About vdka/json and Freddy
+### * A Note About vdka/json and Freddy
 You might notice that the "JSON" and "Freddy" bars in the graph are different from the rest. These projects use their own JSON deserializers instead of `NSJSONSerialization`. 
 
-##That Thing on the Swift Blog
+## That Thing on the Swift Blog
 There was a Swift blog post about [working with JSON in Swift](https://developer.apple.com/swift/blog/?id=37). The concluding section seems to discourage the use of a JSON framework and instead use the features available in the Swift language itself. However, the post is referring specifically to abstractions that use reflection to automatically map between dictionaries and model objects. None of the frameworks evaluated here do that, but instead favor explicitness. The error handling example from the Swift blog post demonstrates why using a `guard let` approach to JSON is a bad idea for any significant amount of JSON processing. It is very verbose, repetitive, and error prone. The frameworks evaluated here provide a concise and declarative way to work with JSON while avoiding "magic."
 
-##Conclusion
+## Conclusion
 If you are looking for a Swift JSON mapper, you might want to clone JSONShootout and compare these frameworks side-by-side yourself. 
 ### Installation
 1. Clone the project
@@ -292,7 +292,7 @@ If you are looking for a Swift JSON mapper, you might want to clone JSONShootout
 3. Open the workspace
 4. Run the unit tests in the JSONShootoutTests target
 
-##Contributing
+## Contributing
 If you would like to add another framework for comparison, submit a pull request after making the following changes: 
 
 1. Add the new framework to the `Cartfile`.
