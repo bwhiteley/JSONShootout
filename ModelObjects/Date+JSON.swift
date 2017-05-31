@@ -1,5 +1,5 @@
 //
-//  NSDate+JSON.swift
+//  Date+JSON.swift
 //  JSONShootout
 //
 //  Created by Bart Whiteley on 5/17/16.
@@ -12,7 +12,7 @@ import Mapper
 
 // Support for Marshal
 extension Date : ValueType {
-    public static func value(_ object: Any) throws -> Date {
+    public static func value(from object: Any) throws -> Date {
         guard let dateString = object as? String else {
             throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
         }

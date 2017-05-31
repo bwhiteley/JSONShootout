@@ -25,8 +25,8 @@ public struct Recording {
     
     
 // Date parsing is slow. Remove dates to better measure performance.
-//    let startTs:NSDate?
-//    let endTs:NSDate?
+//    let startTs:Date?
+//    let endTs:Date?
     let startTsStr:String
     let status:Status
     let recordId:String
