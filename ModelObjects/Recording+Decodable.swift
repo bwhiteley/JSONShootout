@@ -13,6 +13,8 @@ import Decodable
 extension Recording : Decodable {
     public static func decode(_ json: Any) throws -> Recording {
         return try Recording(
+//            startTs: json => "StartTs",
+//            endTs: json => "EndTs",
             startTsStr: json => "StartTs",
             status: Status(rawValue: json => "Status") ?? .Unknown,
             recordId: json => "RecordId",
