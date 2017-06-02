@@ -7,16 +7,17 @@
 //
 
 import Unbox
+import Himotoki
 
 public struct Recording {
-    enum Status: String, UnboxableEnum {
+    enum Status: String, UnboxableEnum, Decodable {
         case None = "0"
         case Recorded = "-3"
         case Recording = "-2"
         case Unknown
     }
     
-    enum RecGroup: String, UnboxableEnum {
+    enum RecGroup: String, UnboxableEnum, Decodable {
         case Deleted = "Deleted"
         case Default = "Default"
         case LiveTV = "LiveTV"
