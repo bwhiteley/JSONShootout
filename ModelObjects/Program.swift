@@ -7,13 +7,10 @@
 //
 
 import Foundation
-import Marshal
+//import Marshal
 import Unbox
 import Mapper
 import SwiftyJSON
-import Argo
-import Curry
-import Runes
 
 public struct Program {
     
@@ -29,35 +26,6 @@ public struct Program {
     let episode:String? // Int?
 }
 
-extension Program: Decodable {
-    public static func decode(_ json: Argo.JSON) -> Decoded<Program> {
-        return curry(Program.init)
-            <^> json <| "Title"
-            <*> json <| ["Channel", "ChanId"]
-            <*> json <|? "Description"
-            <*> json <|? "SubTitle"
-            <*> json <| "Recording"
-            <*> json <|? "Season"
-            <*> json <|? "Episode"
-        
-    }
-}
-
-extension Program: Unmarshaling {
-    public init(object json: MarshaledObject) throws {
-        title = try json.value(for:"Title")
-        chanId = try json.value(for:"Channel.ChanId")
-//        startTime = try json.value(for:"StartTime")
-//        endTime = try json.value(for:"EndTime")
-        description = try json.value(for:"Description")
-        subtitle = try json.value(for:"SubTitle")
-        recording = try json.value(for:"Recording")
-        season = try json.value(for:"Season") //  as String?).flatMap({Int($0)})
-        episode = try json.value(for:"Episode") // as String?).flatMap({Int($0)})
-//        season = (try json.value(for:"Season") as String?).flatMap({Int($0)})
-//        episode = (try json.value(for:"Episode") as String?).flatMap({Int($0)})
-    }
-}
 
 extension Program: Unboxable {
     public init(unboxer: Unboxer) {

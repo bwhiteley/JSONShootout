@@ -41,6 +41,10 @@
 		CC9BF6711DB175E200AA5B70 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9BF66E1DB175E200AA5B70 /* Argo.framework */; };
 		CC9BF6721DB175E200AA5B70 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9BF66F1DB175E200AA5B70 /* Curry.framework */; };
 		CC9BF6731DB175E200AA5B70 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9BF6701DB175E200AA5B70 /* Runes.framework */; };
+		CCC394C51F0FA9CE003D4A58 /* Recording+Marshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC394C41F0FA9CE003D4A58 /* Recording+Marshal.swift */; };
+		CCC394C71F0FA9DD003D4A58 /* Program+Marshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC394C61F0FA9DD003D4A58 /* Program+Marshal.swift */; };
+		CCC394C91F0FAB2A003D4A58 /* Recording+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC394C81F0FAB2A003D4A58 /* Recording+Argo.swift */; };
+		CCC394CB1F0FAB35003D4A58 /* Program+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC394CA1F0FAB35003D4A58 /* Program+Argo.swift */; };
 		CCD510591CFFFB4C00E9C0D1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */; };
 		CCD5105B1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */; };
 		CCFD5B551D0A718C0021C2B3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */; };
@@ -115,6 +119,10 @@
 		CC9BF66E1DB175E200AA5B70 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Carthage/Checkouts/Argo/build/Release-iphoneos/Argo.framework"; sourceTree = "<group>"; };
 		CC9BF66F1DB175E200AA5B70 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-iphoneos/Curry.framework"; sourceTree = "<group>"; };
 		CC9BF6701DB175E200AA5B70 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = "Carthage/Checkouts/Runes/build/Release-iphoneos/Runes.framework"; sourceTree = "<group>"; };
+		CCC394C41F0FA9CE003D4A58 /* Recording+Marshal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Marshal.swift"; sourceTree = "<group>"; };
+		CCC394C61F0FA9DD003D4A58 /* Program+Marshal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Marshal.swift"; sourceTree = "<group>"; };
+		CCC394C81F0FAB2A003D4A58 /* Recording+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recording+Argo.swift"; sourceTree = "<group>"; };
+		CCC394CA1F0FAB35003D4A58 /* Program+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Program+Argo.swift"; sourceTree = "<group>"; };
 		CCD510581CFFFB4C00E9C0D1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD5105A1CFFFF7000E9C0D1 /* SwiftyJSON_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +227,10 @@
 				CC9786BB1CEBAC14005A5DEA /* Recording.swift */,
 				CC9786BD1CEBAC21005A5DEA /* Program.swift */,
 				CC9786BF1CEBAC6C005A5DEA /* NSDate+JSON.swift */,
+				CCC394C41F0FA9CE003D4A58 /* Recording+Marshal.swift */,
+				CCC394C61F0FA9DD003D4A58 /* Program+Marshal.swift */,
+				CCC394C81F0FAB2A003D4A58 /* Recording+Argo.swift */,
+				CCC394CA1F0FAB35003D4A58 /* Program+Argo.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -403,8 +415,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCC394C91F0FAB2A003D4A58 /* Recording+Argo.swift in Sources */,
+				CCC394CB1F0FAB35003D4A58 /* Program+Argo.swift in Sources */,
 				CC9786BE1CEBAC21005A5DEA /* Program.swift in Sources */,
 				CC9786C01CEBAC6C005A5DEA /* NSDate+JSON.swift in Sources */,
+				CCC394C71F0FA9DD003D4A58 /* Program+Marshal.swift in Sources */,
+				CCC394C51F0FA9CE003D4A58 /* Recording+Marshal.swift in Sources */,
 				CC9786BC1CEBAC14005A5DEA /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

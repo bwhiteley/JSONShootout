@@ -8,13 +8,10 @@
 
 import Foundation
 
-import Marshal
+//import Marshal
 import Unbox
 import Mapper
 import SwiftyJSON
-import Argo
-import Curry
-import Runes
 
 public struct Recording {
     enum Status: String, UnboxableEnum {
@@ -50,16 +47,6 @@ public struct Recording {
     let recGroup:RecGroup?
 }
 
-extension Recording: Unmarshaling {
-    public init(object json:MarshaledObject) throws {
-//        startTs = try? json.value(for:"StartTs")
-//        endTs = try? json.value(for:"EndTs")
-        startTsStr = try json.value(for:"StartTs")
-        recordId = try json.value(for:"RecordId")
-        status = (try? json.value(for:"Status")) ?? .Unknown
-        recGroup = (try? json.value(for:"RecGroup")) ?? .Unknown
-    }
-}
 
 extension Recording: Unboxable {
     public init(unboxer: Unboxer) {
@@ -99,19 +86,6 @@ extension Recording { // SwiftyJSON
         else {
             recGroup = .Unknown
         }
-    }
-}
-
-extension Recording.RecGroup: Decodable {}
-extension Recording.Status: Decodable {}
-
-extension Recording: Decodable {
-    public static func decode(_ json: Argo.JSON) -> Decoded<Recording> {
-        return curry(Recording.init)
-            <^> json <| "StartTs"
-            <*> json <|? "Status"
-            <*> json <| "RecordId"
-            <*> json <|? "RecGroup"
     }
 }
 
