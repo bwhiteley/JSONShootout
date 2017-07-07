@@ -1,3 +1,6 @@
+# * Note about JSONDecoder in Swift 4 *
+To experiment with `JSONDecoder` in Swift 4, use the `swift4` branch. Some of the other implementations were removed from the `swift4` branch to get it to compile and run. Check the performance graph near end of this file to see the performance of `JSONDecoder`
+
 # Swift + JSON
 Since the first days of Swift, developers have been exploring strategies for dealing with JSON. While some call this "JSON Parsing", with [few](https://github.com/bignerdranch/Freddy) [exceptions](https://github.com/vdka/JSON) most people rely on `NSJSONSerialization` for the actual parsing. Most of the effort has gone into finding the best way to map JSON objects (dictionaries and arrays) into model objects (structs, classes, enums).
 
