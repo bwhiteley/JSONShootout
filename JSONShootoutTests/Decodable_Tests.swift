@@ -1,29 +1,49 @@
 //
-//  Marshal_Tests.swift
-//  JSONShootout
+//  Decodable_Tests.swift
+//  JSONShootoutTests
 //
-//  Created by Bart Whiteley on 5/17/16.
-//  Copyright © 2016 Bart Whiteley. All rights reserved.
+//  Created by Bart Whiteley on 6/16/17.
+//  Copyright © 2017 SwiftBit. All rights reserved.
 //
+
 
 import XCTest
 import ModelObjects
-import Decodable
+import Marshal
 
 class Decodable_Tests: XCTestCase {
-
-    func testDeserialization() {
+    
+    
+    func testDeserializationOnly() {
         self.measure {
-            let d:NSDictionary = try! JSONSerialization.jsonObject(with: self.data as Data, options: []) as! NSDictionary
-            XCTAssert(d.count > 0)
+            let json = try! JSONParser.JSONObjectWithData(self.data as Data)
+            XCTAssert(json.count > 0)
         }
     }
     
-    func testPerformance() {
-        let dict = try! JSONSerialization.jsonObject(with: self.data as Data, options: []) as! NSDictionary
-        
+    
+    func testSwiftDecoderPerformance() throws {
+        let decoder = JSONDecoder()
+        let data = self.data
         self.measure {
-            let programs:[Program] = try! dict => "ProgramList" => "Programs"
+            let container: Container = try! decoder.decode(Container.self, from: data)
+            XCTAssert(container.programList.programs.count > 1000)
+        }
+    }
+    
+    func testMarshalPerformance() {
+        let data = self.data
+        self.measure {
+            let json = try! JSONParser.JSONObjectWithData(data)
+            let programs:[Program] = try! json.value(for:"ProgramList.Programs")
+            XCTAssert(programs.count > 1000)
+        }
+    }
+    
+    func testMarshalPerformance_MappingOnly() {
+        let json = try! JSONParser.JSONObjectWithData(self.data as Data)
+        self.measure {
+            let programs:[Program] = try! json.value(for:"ProgramList.Programs")
             XCTAssert(programs.count > 1000)
         }
     }
@@ -34,5 +54,22 @@ class Decodable_Tests: XCTestCase {
         let data = try! Data(contentsOf: path!)
         return data
     }()
-
+    
 }
+
+struct Container: Decodable {
+    let programList: ProgramList
+    
+    enum CodingKeys: String, CodingKey {
+        case programList = "ProgramList"
+    }
+}
+
+struct ProgramList: Decodable {
+    let programs: [Program]
+    
+    enum CodingKeys: String, CodingKey {
+        case programs = "Programs"
+    }
+}
+
