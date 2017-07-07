@@ -11,8 +11,8 @@ public struct Program {
     let title:String
     let chanId:String
 // Date parsing is slow. Remove dates to better measure performance.
-//    let startTime:NSDate
-//    let endTime:NSDate
+//    let startTime:Date
+//    let endTime:Date
     let description:String?
     let subtitle:String?
     let recording:Recording

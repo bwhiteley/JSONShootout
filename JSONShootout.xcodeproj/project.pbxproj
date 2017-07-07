@@ -78,7 +78,7 @@
 		CC9786B41CEBABE7005A5DEA /* ModelObjects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC97869E1CEBABE7005A5DEA /* ModelObjects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC9786BC1CEBAC14005A5DEA /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9786BB1CEBAC14005A5DEA /* Recording.swift */; };
 		CC9786BE1CEBAC21005A5DEA /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9786BD1CEBAC21005A5DEA /* Program.swift */; };
-		CC9786C01CEBAC6C005A5DEA /* NSDate+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9786BF1CEBAC6C005A5DEA /* NSDate+JSON.swift */; };
+		CC9786C01CEBAC6C005A5DEA /* Date+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9786BF1CEBAC6C005A5DEA /* Date+JSON.swift */; };
 		CC9786C21CEBACD0005A5DEA /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C11CEBACD0005A5DEA /* Mapper.framework */; };
 		CC9786C41CEBACD5005A5DEA /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C31CEBACD5005A5DEA /* Marshal.framework */; };
 		CC9786C61CEBACE8005A5DEA /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9786C51CEBACE8005A5DEA /* Unbox.framework */; };
@@ -189,7 +189,7 @@
 		CC9786A21CEBABE7005A5DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9786BB1CEBAC14005A5DEA /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		CC9786BD1CEBAC21005A5DEA /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
-		CC9786BF1CEBAC6C005A5DEA /* NSDate+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+JSON.swift"; sourceTree = "<group>"; };
+		CC9786BF1CEBAC6C005A5DEA /* Date+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+JSON.swift"; sourceTree = "<group>"; };
 		CC9786C11CEBACD0005A5DEA /* Mapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9786C31CEBACD5005A5DEA /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Marshal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9786C51CEBACE8005A5DEA /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Unbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,7 +331,7 @@
 				CC9786A21CEBABE7005A5DEA /* Info.plist */,
 				CC9786BB1CEBAC14005A5DEA /* Recording.swift */,
 				CC9786BD1CEBAC21005A5DEA /* Program.swift */,
-				CC9786BF1CEBAC6C005A5DEA /* NSDate+JSON.swift */,
+				CC9786BF1CEBAC6C005A5DEA /* Date+JSON.swift */,
 				71337C8A1DBEBC6B00DCA374 /* Recording+Marshal.swift */,
 				71337C8C1DBEBC7900DCA374 /* Recording+Mapper.swift */,
 				71337C8E1DBEBC8600DCA374 /* Recording+Unbox.swift */,
@@ -543,7 +543,7 @@
 				71337C991DBEBFDC00DCA374 /* Program+SwiftyJSON.swift in Sources */,
 				2F28689E1DE7FB58002A6F68 /* Program+Freddy.swift in Sources */,
 				71337C931DBEBFB400DCA374 /* Program+Marshal.swift in Sources */,
-				CC9786C01CEBAC6C005A5DEA /* NSDate+JSON.swift in Sources */,
+				CC9786C01CEBAC6C005A5DEA /* Date+JSON.swift in Sources */,
 				9E9BF9CE1DCD126D00548161 /* Program+PMJSON.swift in Sources */,
 				5B69A1DA1DBEC84200B12579 /* Recording+Decodable.swift in Sources */,
 				AA2B38D01DC0B4D2008CECCD /* Program+JSON.swift in Sources */,

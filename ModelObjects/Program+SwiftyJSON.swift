@@ -14,5 +14,8 @@ extension Program { // SwiftyJSON
         season = json["Season"].int
         episode = json["Episode"].int
         recording = Recording(json: json["Recording"])
+
+//        startTime = Date.fromISO8601String(json["StartTime"].stringValue)!
+//        endTime = Date.fromISO8601String(json["EndTime"].stringValue)!
     }
 }
