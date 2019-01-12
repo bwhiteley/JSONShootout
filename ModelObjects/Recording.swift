@@ -6,17 +6,16 @@
 //  Copyright © 2016 Bart Whiteley. All rights reserved.
 //
 
-import Unbox
 
 public struct Recording: Decodable { // Can't currently conform to Decodable in an extension. 
-    enum Status: String, UnboxableEnum {
+    enum Status: String {
         case None = "0"
         case Recorded = "-3"
         case Recording = "-2"
         case Unknown
     }
     
-    enum RecGroup: String, UnboxableEnum {
+    enum RecGroup: String {
         case Deleted = "Deleted"
         case Default = "Default"
         case LiveTV = "LiveTV"

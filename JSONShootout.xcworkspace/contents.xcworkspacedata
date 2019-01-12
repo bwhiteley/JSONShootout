@@ -5,33 +5,9 @@
       location = "group:JSONShootout.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Carthage/Checkouts/ObjectMapper/ObjectMapper.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/mapper/Mapper.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Carthage/Checkouts/Marshal/Marshal.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Carthage/Checkouts/Unbox/Unbox.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Carthage/Checkouts/SwiftyJSON/SwiftyJSON.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/Decodable/Decodable.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/json/JSON.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/Gloss/Gloss.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/Genome/Genome.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/PMJSON/PMJSON.xcodeproj">
    </FileRef>
 </Workspace>

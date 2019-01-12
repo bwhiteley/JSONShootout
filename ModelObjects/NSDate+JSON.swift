@@ -8,7 +8,6 @@
 
 import Foundation
 import Marshal
-import Mapper
 
 // Support for Marshal
 extension Date : ValueType {
@@ -41,17 +40,3 @@ extension Date {
 }
 
 
-// Support for Mapper
-extension Date: Convertible {
-    public static func fromMap(_ value: Any) throws -> Date {
-        guard let string = value as? String else {
-            throw MapperError.convertibleError(value: value, type: String.self)
-        }
-        
-        if let date = ISO8601SecondFormatter.date(from: string) {
-            return date
-        }
-
-        throw MapperError.customError(field: nil, message: "'\(string)' is not a valid Date")
-    }
-}
